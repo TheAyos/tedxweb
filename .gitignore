@@ -27,3 +27,5 @@ ispi/**
 *.jpg
 src/components/ui/**
 *.pdf
+
+!src/components/ui/provider.tsx
