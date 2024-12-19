@@ -1,4 +1,3 @@
-import React from "react";
 import {
   Box,
   Flex,
@@ -19,7 +18,7 @@ export default function Navbar() {
       <Flex h={16} alignItems="center" justifyContent="space-between">
         <IconButton
           size="md"
-          icon={open ? <FaTimes /> : <FaBars />}
+          children={open ? <FaTimes /> : <FaBars />}
           aria-label="Open Menu"
           display={{ md: "none" }}
           onClick={onToggle}

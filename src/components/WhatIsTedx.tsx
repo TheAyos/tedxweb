@@ -8,8 +8,6 @@ import {
   Link,
   HStack,
 } from "@chakra-ui/react";
-import Header from "../components/Header";
-import Footer from "../components/Footer";
 
 const About: React.FC = () => {
   return (

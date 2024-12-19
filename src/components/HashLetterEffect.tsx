@@ -1,82 +1,82 @@
-import React, { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect } from "react";
 
-const HashLetterEffectt = ({
-  words = ["Hashhhh", "Effect !"],
-}: {
-  words?: string[];
-}) => {
-  const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
-  const [currentText, setCurrentText] = useState(words[0]);
-  let targetWord = words[0];
-  const intervalRef = useRef(0);
-  const pRef = useRef(null);
+// const HashLetterEffectt = ({
+//   words = ["Hashhhh", "Effect !"],
+// }: {
+//   words?: string[];
+// }) => {
+//   const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+//   const [currentText, setCurrentText] = useState(words[0]);
+//   let targetWord = words[0];
+//   const intervalRef = useRef(0);
+//   const pRef = useRef(null);
 
-  const hashSpeed = 8;
-  const hashDuration = 2000;
-  const hashIntervalDelay = hashDuration / (targetWord.length * hashSpeed);
+//   const hashSpeed = 8;
+//   const hashDuration = 2000;
+//   const hashIntervalDelay = hashDuration / (targetWord.length * hashSpeed);
 
-  const handleMouseOver = () => {
-    let iteration = 0;
+//   const handleMouseOver = () => {
+//     let iteration = 0;
 
-    clearInterval(intervalRef.current);
+//     clearInterval(intervalRef.current);
 
-    const interval = setInterval(() => {
-      setCurrentText((prevText) =>
-        prevText
-          .split("")
-          .map((_letter, index) => {
-            if (index < iteration) return targetWord[index];
-            return letters[Math.floor(Math.random() * letters.length)];
-          })
-          .join("")
-      );
-      if (iteration >= targetWord.length) clearInterval(interval);
-      iteration += 1 / hashSpeed;
-    }, hashIntervalDelay);
-  };
+//     const interval = setInterval(() => {
+//       setCurrentText((prevText) =>
+//         prevText
+//           .split("")
+//           .map((_letter, index) => {
+//             if (index < iteration) return targetWord[index];
+//             return letters[Math.floor(Math.random() * letters.length)];
+//           })
+//           .join("")
+//       );
+//       if (iteration >= targetWord.length) clearInterval(interval);
+//       iteration += 1 / hashSpeed;
+//     }, hashIntervalDelay);
+//   };
 
-  useEffect(() => {
-    pRef.current &&
-      (pRef.current as HTMLElement).addEventListener(
-        "mouseover",
-        handleMouseOver
-      );
-    return () => {
-      pRef.current &&
-        (pRef.current as HTMLElement).removeEventListener(
-          "mouseover",
-          handleMouseOver
-        );
-      clearInterval(intervalRef.current);
-    };
-  }, []);
+//   useEffect(() => {
+//     pRef.current &&
+//       (pRef.current as HTMLElement).addEventListener(
+//         "mouseover",
+//         handleMouseOver
+//       );
+//     return () => {
+//       pRef.current &&
+//         (pRef.current as HTMLElement).removeEventListener(
+//           "mouseover",
+//           handleMouseOver
+//         );
+//       clearInterval(intervalRef.current);
+//     };
+//   }, []);
 
-  const [isActive, setIsActive] = useState(true);
+//   const [isActive, setIsActive] = useState(true);
 
-  const index = useRef(0);
-  useEffect(() => {
-    let interval = null;
-    if (isActive) {
-      interval = setInterval(() => {
-        index.current++;
-        setCurrentText(words[index.current]);
-        targetWord = words[index.current];
-        if (index.current === words.length - 1) {
-          setIsActive(false);
-        }
-      }, hashDuration);
-    }
-    return () => {
-      if (interval) clearInterval(interval);
-    };
-  }, [isActive]);
+//   const index = useRef(0);
+//   useEffect(() => {
+//     let interval = null;
+//     if (isActive) {
+//       interval = setInterval(() => {
+//         index.current++;
+//         setCurrentText(words[index.current]);
+//         targetWord = words[index.current];
+//         if (index.current === words.length - 1) {
+//           setIsActive(false);
+//         }
+//       }, hashDuration);
+//     }
+//     return () => {
+//       if (interval) clearInterval(interval);
+//     };
+//   }, [isActive]);
 
-  return (
-    <p ref={pRef} data-value={targetWord}>
-      {currentText}
-    </p>
-  );
-};
+//   return (
+//     <p ref={pRef} data-value={targetWord}>
+//       {currentText}
+//     </p>
+//   );
+// };
 
 const HashLetterEffect = ({
   words = ["Hashhhh", "Effect !"],
