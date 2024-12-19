@@ -29,3 +29,4 @@ src/components/ui/**
 *.pdf
 
 !src/components/ui/provider.tsx
+!src/components/ui/color-mode.tsx
