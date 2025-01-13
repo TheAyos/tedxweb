@@ -14,7 +14,7 @@ const Speakers = () => {
                     </Text>
                 </HStack>
                 {SPEAKERS[2024]
-                    .sort(() => Math.random() - 0.5)
+                    // .sort(() => Math.random() - 0.5)
                     .map((s, i) => (
                         <Card.Root
                             key={i}
