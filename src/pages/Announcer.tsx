@@ -1,9 +1,8 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import HashLetterEffect from "../components/HashLetterEffect";
-import { Heading, Span, Image, VStack, Flex, Box, Grid, Text } from "@chakra-ui/react";
-import EncryptedButton from "../components/HashLetterEffect";
-
+import { Heading, Span, Image, VStack, Box, Grid, Text } from "@chakra-ui/react";
+// import "../AppOld.css";
 // disables registration button when set to '#'
 const REGISTER_NOW_LINK = "#";
 
@@ -34,7 +33,7 @@ const Announcer = () => {
                                         as="h1"
                                         className="shake-effect"
                                         textAlign="left"
-                                        fontSize={{ base: "4vw", sm: "12vw", md: "10vw", lg: "4vw" }}
+                                        fontSize={{ base: "8vw", sm: "12vw", md: "10vw", lg: "4vw" }}
                                         fontWeight="bold"
                                         lineHeight="1"
                                         letterSpacing="tight"
@@ -53,8 +52,7 @@ const Announcer = () => {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.4 }}
-                        className="lg:block md:hidden sm:hidden"
-                    >
+                        className="lg:block md:hidden sm:hidden">
                         <div className="grid grid-cols-3 border-t border-white/20 pt-8">
                             <div className="space-y-2 border-r border-white/10 pr-4">
                                 <div className="font-mono text-[10px] text-red-600 uppercase tracking-widest">Previous Editions</div>
@@ -81,13 +79,10 @@ const Announcer = () => {
                         maxW="container.xl"
                         py={12}
                         px={{ base: 8, md: "10vw" }}
+                        className="lg:block md:hidden sm:hidden"
                     >
                         <Box as="section" width="full" mt={12} gap={8}>
-                            <Text as={"h2"} id="events" fontSize={"4xl"} fontWeight={"medium"} textAlign={"left"}>
-                                This year's theme
-                            </Text>
-
-                            {/* <Heading
+                            {/*     <Heading
                                 as="h2"
                                 alignSelf={{ base: "center", sm: "flex-end" }}
                                 fontSize={{ base: "xl", sm: "8vw", md: "5xl", lg: "7xl" }}
@@ -95,27 +90,30 @@ const Announcer = () => {
                                 lineHeight="1"
                                 letterSpacing="tight"
                             >
-                            </Heading> */}
+                                aa
+                            </Heading>
 
-                            <Grid templateColumns={"1fr 1fr"} templateRows={"1fr 1fr"}>
-                                <Text as={"h1"} id="events" fontSize={"4xl"} fontWeight={"bold"} textAlign={"right"} color="var(--tedx-red)" gridArea={"1/1/2/2"}>
-                                    <HashLetterEffect words={["Evolving"]} rtl={false} />
-                                    {/* Evolving */}
-                                </Text>
-                                <Text as={"h1"} id="events" fontSize={"4xl"} fontWeight={"bold"} textAlign={"left"} color="var(--tedx-red)" gridArea={"2/2/3/3"}>
-                                    <HashLetterEffect words={["Patterns"]} rtl={true} />
-                                    {/* <EncryptedButton plainText="Patterns" /> */}
-                                    {/* Patterns */}
-                                </Text>
-                            </Grid>
-
-
-                            <Text>
-                                We are organizing a conference titled TEDxÉcolePolytechnique on Tuesday 6th of May 2025. This event will be held in Amphitheatre Poincaré in the main
-                                building of École Polytechnique. The event will feature a lineup of around 6 speakers, each handpicked for their unique perspectives, expertise and
-                                inspiring stories A Q&A session as well as buffet will take place after the speeches and will enable students to ask questions and involve them in a
-                                more targeted discussion with the speakers
+                        <Grid templateColumns={"1fr 1fr"} templateRows={"1fr 1fr"}>
+                            <Text as={"h1"} id="events" fontSize={"4xl"} fontWeight={"bold"} textAlign={"right"} color="var(--tedx-red)" gridArea={"1/1/2/2"}>
+                                <HashLetterEffect words={["Evolving"]} rtl={false} />
                             </Text>
+                            <Text as={"h1"} id="events" fontSize={"4xl"} fontWeight={"bold"} textAlign={"left"} color="var(--tedx-red)" gridArea={"2/2/3/3"}>
+                                <HashLetterEffect words={["Patterns"]} rtl={true} />
+                            </Text>
+                        </Grid> */}
+
+
+                            <Box display="flex" justifyContent="center" alignItems="center" mb={8} w="100%">
+                                <Image
+                                    src="images/2024/event-banner.jpg"
+                                    alt="Evolving patterns 2025 edition banner"
+                                    maxH="400px"
+                                    w={{ base: "100%", md: "80%" }}
+                                    objectFit="contain"
+                                    className="shake-effect"
+                                    margin="0 auto"
+                                />
+                            </Box>
                         </Box>
                     </VStack>
 
@@ -123,7 +121,8 @@ const Announcer = () => {
 
 
                 {/* Right column */}
-                <div className="xl:col-span-5 lg:col-span-5 md:col-span-6 sm:col-span-4 xl:p-16 lg:p-12 md:p-8 sm:p-6 flex flex-col justify-between">
+                {/* <div className="col-span-4 xl:col-span-5 lg:col-span-5 md:col-span-6 sm:col-span-4 p-4 sm:p-6 md:p-8 lg:p-12 xl:p-16 flex flex-col justify-between"> */}
+                <div className="col-span-4 sm:col-span-4 md:col-span-6 lg:col-span-5 xl:col-span-5 p-6 sm:p-6 md:p-8 lg:p-12 xl:p-16 flex flex-col justify-between">
                     {/* Event details */}
                     <motion.div initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.3 }} className="space-y-12">
                         <div className="space-y-6">
@@ -205,19 +204,21 @@ const Announcer = () => {
             </main>
 
             {/* Corner borders deco */}
-            {[
-                ["top", "right"],
-                ["bottom", "left"],
-            ].map(([x, y]) => (
-                <motion.div
-                    key={x + y}
-                    initial={{ scale: 0 }}
-                    animate={{ scale: 1 }}
-                    transition={{ duration: 0.5 }}
-                    className={`absolute ${x}-0 ${y}-0 w-32 h-32 border-${x[0]}-2 border-${y[0]}-2 border-red-600`}
-                ></motion.div>
-                // {x},{y}
-            ))}
+            {
+                [
+                    ["top", "right"],
+                    ["bottom", "left"],
+                ].map(([x, y]) => (
+                    <motion.div
+                        key={x + y}
+                        initial={{ scale: 0 }}
+                        animate={{ scale: 1 }}
+                        transition={{ duration: 0.5 }}
+                        className={`absolute ${x}-0 ${y}-0 w-32 h-32 border-${x[0]}-2 border-${y[0]}-2 border-red-600`}
+                    ></motion.div>
+                    // {x},{y}
+                ))
+            }
 
             {/* lines background */}
             <div className="absolute inset-0 opacity-15">
@@ -253,7 +254,7 @@ const Announcer = () => {
                       animation: shake 0.3s cubic-bezier(.25,.46,.45,.94) both infinite;
                   }`}
             </style>
-        </section>
+        </section >
     );
 };
 

@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Container, Heading, Text, VStack, Link, HStack, Image, Flex } from "@chakra-ui/react";
+import { Container, Heading, Text, VStack, Link, HStack, Image, Flex } from "@chakra-ui/react";
 
 const About: React.FC = () => {
     return (
@@ -10,7 +10,7 @@ const About: React.FC = () => {
                         Who are we?
                     </Text>
                     <Flex flexDir={{ base: "column", md: "row" }} align="center">
-                        <Image src="images/2024/full-members.jpg" width={{ base: "100%", sm: "xl" }} height={"auto"} className="shake-effect" />
+                        <Image src="images/2024/full-members.jpg" width={{ base: "100%", sm: "xl" }} height={"auto"} />
 
                         <Text as={"p"} fontSize={"md"} fontWeight={"medium"} mt={10} mb={6} px={8}>
                             A group of 17 motivated students enrolled in Bachelor of Science of École Polytechnique. Students coming from all around the world with the common

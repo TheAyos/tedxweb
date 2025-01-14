@@ -3,23 +3,16 @@ import Announcer from "./Announcer";
 import TheTeam from "@/components/TheTeam";
 import Footer from "@/components/Footer";
 import NavBar from "@/components/NavBar";
-import { Card, Box, Button, Flex, Heading, Image, Text, HStack, Link, Span, Container, VStack, Grid } from "@chakra-ui/react";
-import { FaArrowRightLong } from "react-icons/fa6";
-import { FaExternalLinkAlt, FaExternalLinkSquareAlt } from "react-icons/fa";
+import { Box, Flex, Text, VStack, Grid } from "@chakra-ui/react";
 import HzScroll from "@/components/HzScroll";
-import { MotionBox, MotionSpan, MotionSvg } from "@/components/MotionUtil";
-import { motion } from "framer-motion";
-import { EDITIONS, SPEAKERS } from "@/Data";
 import PreviousEditions from "@/components/PreviousEditions";
 import Speakers from "@/components/Speakers";
 
 // TODO: optimize imgs
-// TODO: navbar hide/show on scroll
 // -sth like why tedxecole poly ?
-// TODO:TODO: photos slider gallery select photos >=5/edition
 // -timetable with videos (for ex: interlude musical)
 // -speakers linu up texAMS style
-//    cards nice stuff, opens pop up ? to speaker details
+//    cards nice stuff & more effects !!, opens pop up ? to speaker details
 
 const Home: React.FC = () => {
     return (
