@@ -1,10 +1,10 @@
 export const NAV_LINKS = [
-    { label: "Speakers", href: "#speakers" },
-    { label: "Events", href: "#events" },
-    { label: "Gallery", href: "#gallery" },
-    // { label: "Schedule", href: "#schedule" },
-    { label: "Partners", href: "/partners" },
-    { label: "The Team", href: "#theteam" },
+    { label: "Speakers", href: "/#speakers" },
+    { label: "Events", href: "/#events" },
+    { label: "Gallery", href: "/#gallery" },
+    // TODO: { label: "Schedule", href: "#schedule" },
+    { label: "Partners", href: "/partners#top" },
+    { label: "The Team", href: "/#theteam" },
 ];
 
 export const EDITIONS = [
@@ -22,8 +22,54 @@ export const EDITIONS = [
     },
 ];
 
+export const SPONSORS = [
+    {
+        year: "(Upcoming...)  2025",
+        sponsors: [
+            "/images/2025/sponsors/ipp.png",
+            "/images/2025/sponsors/_upcoming.png",
+        ]
+    },
+    {
+        year: "2024",
+        sponsors: [
+            "/images/2024/sponsors/ipp.png",
+            "/images/2024/sponsors/edf-lab.png",
+            "/images/2024/sponsors/edf-lab-2.png",
+        ]
+    },
+    {
+        year: "2023",
+        sponsors: [
+            "/images/2023/sponsors/ipp.png",
+            "/images/2023/sponsors/onepoint.png",
+            "/images/2023/sponsors/send-up.png",
+            "/images/2023/sponsors/odc.png",
+            "/images/2023/sponsors/sten.jpg",
+        ]
+    }
+];
+
+//TODO: add 2023
 export const SPEAKERS = {
     2024: [
+        {
+            image: "/images/2024/sybille.jpg",
+            name: "Sybille Raphael",
+            speech_title: "Hidden in Plain Sight - Whistleblowing in the digital age",
+            speech_description:
+                "Sybille Raphael's approach to this theme evolved around whistleblowing in the digital age. Why do bad things remain hidden for so long? In the UK it took 20 years to unravel the tragic miscarriage of justice that saw hundreds of innocent local Postmasters convicted because a faulty accounting software made them look as if they had been stealing money.  What does it take to reveal the rot concealed within an organisation? Why is it so difficult to speakup? Does technology help or does it make it harder? What’s the hidden cost for individuals, for business, for society? And what can we do to solve this?  The retaliatory model or the incentive model?  What's our own individual agency in all this? (Credit: Sybille Raphael)",
+            speech_link: "https://www.youtube.com/watch?v=ckEze-_FzBw",
+        },
+        {
+            image: "/images/2024/larrieu-content.jpg",
+            name: "Thomas Larrieu",
+            speech_title: "How AI could reshape global supply chains",
+            speech_description:
+                "With a Master's degree from the Toulouse School of Economics and a PhD in Economics and Statistics from École Polytechnique, he co-founded Altasell, a startup dedicated to improving pharmaceutical distribution in Africa, making it more accessible, faster, and secure. He was later appointed as Chief Data Scientist and Research Officer, eventually assuming the role of CEO at Upply, a digital freight platform renowned for its transparency and efficiency in the supply chain. Upply's innovative approach, backed by data science and digital technologies, has earned the trust of industry giants like Amazon, DHL, and Coca-Cola.",
+            //  /// Thomas Larrieu’s discussed the transformative potential of digital technologies in the supply chain, an often-overlooked yet vital aspect of the global economy. How efficient are traditional supply chains, and what steps can we take to improve outdated methods across various systems? Larrieu sees the future of his industry driven by seamless data exchange, universal standards, and the use of artificial intelligence to create more efficient, sustainable, and resilient logistics networks.
+            speech_link: "https://www.youtube.com/watch?v=p_70O0TdJLM",
+        },
         {
             image: "/images/2024/msf-dramatic.jpg",
             name: "Dr. Christos Christou",
@@ -47,23 +93,6 @@ export const SPEAKERS = {
             speech_description:
                 "World Cup-winning French team member, leader of Origins fund. Blaise Matuidi, a former professional footballer, played for renowned clubs like Paris Saint-Germain and Juventus. After retiring, he now leads the Origins fund, investing in sports technology startups and fostering their growth alongside athletes.",
             speech_link: "https://www.youtube.com/watch?v=_12HkMZk-C0",
-        },
-        {
-            image: "/images/2024/thumb.jpg",
-            name: "Sybille Raphael",
-            speech_title: "Hidden in Plain Sight - Whistleblowing in the digital age",
-            speech_description:
-                "Sybille Raphael's approach to this theme evolved around whistleblowing in the digital age. Why do bad things remain hidden for so long? In the UK it took 20 years to unravel the tragic miscarriage of justice that saw hundreds of innocent local Postmasters convicted because a faulty accounting software made them look as if they had been stealing money.  What does it take to reveal the rot concealed within an organisation? Why is it so difficult to speakup? Does technology help or does it make it harder? What’s the hidden cost for individuals, for business, for society? And what can we do to solve this?  The retaliatory model or the incentive model?  What's our own individual agency in all this? (Credit: Sybille Raphael)",
-            speech_link: "https://www.youtube.com/watch?v=ckEze-_FzBw",
-        },
-        {
-            image: "/images/2024/larrieu-content.jpg",
-            name: "Thomas Larrieu",
-            speech_title: "How AI could reshape global supply chains",
-            speech_description:
-                "With a Master's degree from the Toulouse School of Economics and a PhD in Economics and Statistics from École Polytechnique, he co-founded Altasell, a startup dedicated to improving pharmaceutical distribution in Africa, making it more accessible, faster, and secure. He was later appointed as Chief Data Scientist and Research Officer, eventually assuming the role of CEO at Upply, a digital freight platform renowned for its transparency and efficiency in the supply chain. Upply's innovative approach, backed by data science and digital technologies, has earned the trust of industry giants like Amazon, DHL, and Coca-Cola.",
-            //  /// Thomas Larrieu’s discussed the transformative potential of digital technologies in the supply chain, an often-overlooked yet vital aspect of the global economy. How efficient are traditional supply chains, and what steps can we take to improve outdated methods across various systems? Larrieu sees the future of his industry driven by seamless data exchange, universal standards, and the use of artificial intelligence to create more efficient, sustainable, and resilient logistics networks.
-            speech_link: "https://www.youtube.com/watch?v=p_70O0TdJLM",
         },
     ],
 };
