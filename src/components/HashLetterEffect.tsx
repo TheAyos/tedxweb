@@ -1,132 +1,165 @@
 import { useState, useRef, useEffect } from "react";
 
-// const HashLetterEffectt = ({
-//   words = ["Hashhhh", "Effect !"],
-// }: {
-//   words?: string[];
-// }) => {
-//   const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
-//   const [currentText, setCurrentText] = useState(words[0]);
-//   let targetWord = words[0];
-//   const intervalRef = useRef(0);
-//   const pRef = useRef(null);
+const HashLetterEffect = ({ words = ["Hashhhh", "Effect !"], rtl = false }: { words?: string[], rtl: boolean }) => {
+    // const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz!@#$%^&*():{};|,.<>/?";
+    const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz!@#$%^&*():{};|,.<>/?";
+    const [currentText, setCurrentText] = useState(words[0]);
+    const [wordIndex, setWordIndex] = useState(0);
+    const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
-//   const hashSpeed = 8;
-//   const hashDuration = 2000;
-//   const hashIntervalDelay = hashDuration / (targetWord.length * hashSpeed);
+    const shuffleTime = 50;
+    const cyclesPerLetter = 2;
 
-//   const handleMouseOver = () => {
-//     let iteration = 0;
+    const animateText = () => {
+        const targetWord = words[wordIndex];
+        let pos = (rtl) ? targetWord.length : 0;
 
-//     clearInterval(intervalRef.current);
+        intervalRef.current = setInterval(() => {
+            // const interval = setInterval(() => {
+            //     setCurrentText((prev) =>
+            //         prev
+            //             .split("")
+            //             .map((_, index) => {
+            //                 if ((rtl && index >= pos) || (!rtl && index < pos))
+            //                     return targetWord[index];
+            //                 return letters[Math.floor(Math.random() * letters.length)];
+            //             })
+            //             .join("")
+            //     );
 
-//     const interval = setInterval(() => {
-//       setCurrentText((prevText) =>
-//         prevText
-//           .split("")
-//           .map((_letter, index) => {
-//             if (index < iteration) return targetWord[index];
-//             return letters[Math.floor(Math.random() * letters.length)];
-//           })
-//           .join("")
-//       );
-//       if (iteration >= targetWord.length) clearInterval(interval);
-//       iteration += 1 / hashSpeed;
-//     }, hashIntervalDelay);
-//   };
 
-//   useEffect(() => {
-//     pRef.current &&
-//       (pRef.current as HTMLElement).addEventListener(
-//         "mouseover",
-//         handleMouseOver
-//       );
-//     return () => {
-//       pRef.current &&
-//         (pRef.current as HTMLElement).removeEventListener(
-//           "mouseover",
-//           handleMouseOver
-//         );
-//       clearInterval(intervalRef.current);
-//     };
-//   }, []);
+            const hashed = targetWord
+                .split("")
+                .map((char, index) => {
+                    if ((rtl && index >= pos / cyclesPerLetter) || (!rtl && pos / cyclesPerLetter > index)) {
+                        return char;
+                    }
+                    const randomCharIndex = Math.floor(Math.random() * letters.length);
+                    const randomChar = letters[randomCharIndex];
+                    return randomChar;
+                })
+                .join("");
 
-//   const [isActive, setIsActive] = useState(true);
+            setCurrentText(hashed);
 
-//   const index = useRef(0);
-//   useEffect(() => {
-//     let interval = null;
-//     if (isActive) {
-//       interval = setInterval(() => {
-//         index.current++;
-//         setCurrentText(words[index.current]);
-//         targetWord = words[index.current];
-//         if (index.current === words.length - 1) {
-//           setIsActive(false);
-//         }
-//       }, hashDuration);
-//     }
-//     return () => {
-//       if (interval) clearInterval(interval);
-//     };
-//   }, [isActive]);
+            if (rtl) pos--;
+            else pos++;
 
-//   return (
-//     <p ref={pRef} data-value={targetWord}>
-//       {currentText}
-//     </p>
-//   );
-// };
+            if ((rtl && pos < 0) || (!rtl && pos >= targetWord.length * cyclesPerLetter)) {
+                clearInterval(intervalRef.current || undefined);
+                setCurrentText(targetWord);
+            }
+            // if ((rtl && pos <= 0) || (!rtl && pos >= targetWord.length)) clearInterval(intervalRef.current || undefined);
 
-const HashLetterEffect = ({
-  words = ["Hashhhh", "Effect !"],
-}: {
-  words?: string[];
-}) => {
-  const letters = "abcdefghijklmnopqrstuvwxyz"; // ABCDEFGHIJKLMNOPQRSTUVWXYZ
-  const [currentText, setCurrentText] = useState(words[0]);
-  const [wordIndex, setWordIndex] = useState(0);
-  const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
+            // pos += 0.30 * (rtl ? -1 : 1);
+        }, shuffleTime);
 
-  const animateText = () => {
-    const targetWord = words[wordIndex];
-    let iteration = 0;
-
-    const interval = setInterval(() => {
-      setCurrentText((prev) =>
-        prev
-          .split("")
-          .map((_, index) => {
-            if (index < iteration) return targetWord[index];
-            return letters[Math.floor(Math.random() * letters.length)];
-          })
-          .join("")
-      );
-
-      if (iteration >= targetWord.length) clearInterval(interval);
-
-      iteration += 0.25;
-    }, 40);
-  };
-
-  useEffect(() => {
-    const switchWords = () => {
-      setWordIndex((prev) => (prev + 1) % words.length);
-      animateText();
     };
 
-    // Initial animation
-    animateText();
+    useEffect(() => {
+        // const switchWords = () => {
+        //     setWordIndex((prev) => (prev + 1) % words.length);
+        //     animateText();
+        // };
 
-    intervalRef.current = setInterval(switchWords, Math.random() * 3500 + 2500);
+        // Initial animation
+        animateText();
 
-    return () => {
-      if (intervalRef.current) clearInterval(intervalRef.current);
-    };
-  }, [wordIndex]);
+        intervalRef.current = setInterval(animateText, Math.random() * 3500 + 2500);
+        // intervalRef.current = setInterval(switchWords, Math.random() * 3500 + 2500);
 
-  // return <span>{currentText}</span>;
-  return <span>{currentText}</span>;
+        return () => {
+            clearInterval(intervalRef.current || undefined);
+        };
+    }, [wordIndex]);
+
+    // return <span>{currentText}</span>;
+    return <span>{currentText}</span>;
 };
 
 export default HashLetterEffect;
+
+// TODO: potential improvement
+
+import { Box, Button, ButtonProps, Flex } from "@chakra-ui/react";
+import { motion } from "framer-motion";
+
+interface Props extends ButtonProps {
+    plainText?: string;
+    cyclesPerLetter?: number;
+    shuffleTime?: number;
+    cipherChars?: string;
+}
+
+// export default
+function EncryptedButton({
+    plainText = "Encrypt data",
+    cyclesPerLetter = 2,
+    shuffleTime = 50,
+    cipherChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz!@#$%^&*():{};|,.<>/?",
+    ...props
+}: Props) {
+    const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
+    const [text, setText] = useState(plainText);
+
+    const scramble = () => {
+        let pos = 0;
+
+        intervalRef.current = setInterval(() => {
+            const scrambled = plainText
+                .split("")
+                .map((char, index) => {
+                    if (pos / cyclesPerLetter > index) {
+                        return char;
+                    }
+                    const randomCharIndex = Math.floor(Math.random() * cipherChars.length);
+                    const randomChar = cipherChars[randomCharIndex];
+                    return randomChar;
+                })
+                .join("");
+
+            setText(scrambled);
+            pos++;
+
+            if (pos >= plainText.length * cyclesPerLetter) {
+                stopScramble();
+            }
+        }, shuffleTime);
+    };
+
+    const stopScramble = () => {
+        clearInterval(intervalRef.current || undefined);
+        setText(plainText);
+    };
+
+    return (
+        <motion.div whileHover={{ scale: 1.025 }} whileTap={{ scale: 0.975 }} style={{ display: "inline-block" }}>
+            <Button
+                onMouseEnter={scramble}
+                onMouseLeave={stopScramble}
+                w={"fit-content"}
+                overflow={"hidden"}
+                borderRadius={"lg"}
+                borderWidth={"1px"}
+                bgColor={"gray.800"}
+                borderColor={"gray.900"}
+                px={4}
+                py={2}
+                fontFamily={"mono"}
+                fontWeight={"medium"}
+                textTransform={"uppercase"}
+                // color={"gray.200"}
+                transition={"color 0.2s"}
+                _hover={{
+                    color: "green.300",
+                }}
+                role="group"
+                {...props}
+            >
+                <Box as={Flex} position={"relative"} zIndex={10} alignItems={"center"} gap={2}>
+                    <span>{text}</span>
+                </Box>
+            </Button>
+        </motion.div>
+    );
+}

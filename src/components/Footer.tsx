@@ -1,70 +1,34 @@
 import React from "react";
-import {
-  Box,
-  Text,
-  Link,
-  Grid,
-  VStack,
-  HStack,
-  Heading,
-} from "@chakra-ui/react";
+import { Box, Text, Link, Grid, VStack, HStack, Heading, Flex } from "@chakra-ui/react";
+import { FaInstagram, FaLinkedin } from "react-icons/fa";
 
 const Footer: React.FC = () => {
-  return (
-    <Box as="footer" py={8} bg="gray.800" color="white">
-      <Box maxW="container.xl" mx="auto" px={4}>
-        <Grid templateColumns={{ base: "1fr", md: "repeat(3, 1fr)" }} gap={8}>
-          <VStack align="start">
-            <Heading as="h3" size="md" mb={4}>
-              TEDx[name]
-            </Heading>
-            <Text color="gray.400">
-              This independent TEDx event is operated under license from TED.
-            </Text>
-          </VStack>
+    return (
+        <Box as="footer" py={4} bg="gray.900" color="white">
+            <VStack align="center">
+                <Heading as="h3">Follow Us</Heading>
+                <HStack gap={6} py={4} px={8} _hover={{ color: "var(--tedx-red)" }} style={{ transition: "color 0.1s" }}>
+                    <Link href="https://www.instagram.com/tedx.ecolepolytechnique/" target="_blank">
+                        <FaInstagram size="24px" />
+                    </Link>
+                    <Link href="https://www.linkedin.com/company/tedx%C3%A9colepolytechnique2023/posts/" target="_blank">
+                        <FaLinkedin size="24px" />
+                    </Link>
+                </HStack>
 
-          <VStack align="start">
-            <Heading as="h3" size="md" mb={4}>
-              Quick Links
-            </Heading>
-            <VStack align="start" gap={2}>
-              <Link href="/about">About</Link>
-              <Link href="/speakers">Speakers</Link>
-              <Link href="/schedule">Schedule</Link>
-              <Link href="/sponsors">Sponsors</Link>
+                <HStack align={"center"} justify={"center"} mt={8}>
+                    <Text fontSize="xs" mt={8} textAlign="center">
+                        This independent TEDx event is operated under license from TED. <br /> &copy; TEDxÉcolePolytechnique,{" "}
+                        {2024 === new Date().getFullYear() ? 2024 : `2024 - ${new Date().getFullYear()}`} <br />
+                        {/* TODO:website made with ❤️ by{" "}
+                        <Link href="https://ayoubagouzoul.com" target="_blank" color="teal.300">
+                        ayoub
+                        </Link> */}
+                    </Text>
+                </HStack>
             </VStack>
-          </VStack>
-
-          <VStack align="start">
-            <Heading as="h3" size="md" mb={4}>
-              Follow Us
-            </Heading>
-            <HStack gap={4}>{/* Add social media icons/links here */}</HStack>
-          </VStack>
-        </Grid>
-
-        <Text fontSize="sm" mt={8} textAlign="center">
-          This independent TEDx event is operated under license from TED.
-        </Text>
-
-        <Text fontSize="xs" mt={8} textAlign="center">
-          &copy; TEDxÉcolePolytechnique{" "}
-          {2024 === new Date().getFullYear()
-            ? 2024
-            : `2024 - ${new Date().getFullYear()}`}{" "}
-          <br />
-          Website developed with ❤️ by{" "}
-          <Link
-            href="https://ayoubagouzoul.com"
-            target="_blank"
-            color="teal.300"
-          >
-            ayoub
-          </Link>
-        </Text>
-      </Box>
-    </Box>
-  );
+        </Box>
+    );
 };
 
 export default Footer;

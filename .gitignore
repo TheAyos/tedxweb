@@ -27,6 +27,7 @@ ispi/**
 *.jpg
 src/components/ui/**
 *.pdf
-
+*.JPG
+learned.txt
 !src/components/ui/provider.tsx
 !src/components/ui/color-mode.tsx
