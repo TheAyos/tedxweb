@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { Box, Flex, HStack, IconButton, Image, Link, Stack, useDisclosure } from "@chakra-ui/react";
-import { MotionBox, MotionLink, MotionSpan } from "@/components/MotionUtil";
+// import { MotionLink } from "@/components/MotionUtil";
 import ContainerUtil from "@/components/ContainerUtil";
 import { NAV_LINKS } from "@/Data";
+import { motion } from "framer-motion";
+import { HashLink } from 'react-router-hash-link';
 
 const NavBar: React.FC = () => {
     const { open, onToggle } = useDisclosure();
@@ -26,42 +28,34 @@ const NavBar: React.FC = () => {
 
 
     return (
-        <MotionBox
-            bg={"rgba(0,0,0,0.8)"}
-            borderBottom={2}
-            borderStyle={"solid"}
-            borderColor={"var(--tedx-red)"}
-            py={4}
-            position="fixed"
-            width={"100vw"}
-            top={0}
-            zIndex={9999}
+        <motion.div
+            className="bg-black bg-opacity-80 border-b-2 border-solid border-red-600 py-4 fixed w-full top-0 z-50"
             initial={{ y: -100 }}
             animate={{ y: showNav ? 0 : -100 }}
             transition={{ type: "spring" }}
         >
             <ContainerUtil>
-                <Flex flex={{ base: 1 }} justify={{ base: "space-between", md: "start" }} align={"center"} px={{ base: 0, md: 8 }}>
-                    <Link href="/" _focus={{ outline: "none" }}>
-                        <Image src="logo.png" alt="logo" width={"auto"} height={50} />
+                <Flex className="flex justify-between md:justify-start items-center px-0 md:px-8">
+                    <Link href="/" className="focus:outline-none">
+                        <Image src="logo.png" alt="logo" className="h-12 w-auto" />
                     </Link>
-                    <IconButton size="md" children={open ? <FaTimes /> : <FaBars />} display={{ md: "none" }} aria-label="Open Mobile Menu" onClick={onToggle} color="red" />
-                    <Flex display={{ base: "none", md: "flex" }} ml="auto">
+                    <IconButton size="md" children={open ? <FaTimes /> : <FaBars />} className="md:hidden" aria-label="Open Mobile Menu" onClick={onToggle} color="red" />
+                    <Box className="hidden md:block ml-auto">
                         <DesktopNav />
-                    </Flex>
+                    </Box>
                 </Flex>
 
                 {open ? (
                     <Box>
-                        <Stack as="nav" mt={8} mb={4} p={0} display={{ md: "none" }} zIndex="1000">
-                            <ContainerUtil height={"full"}>
+                        <Stack as="nav" className="mt-8 mb-4 p-0 md:hidden z-50">
+                            <ContainerUtil className="h-full">
                                 <MobileNav />
                             </ContainerUtil>
                         </Stack>
                     </Box>
                 ) : null}
             </ContainerUtil>
-        </MotionBox>
+        </motion.div>
     );
 };
 
@@ -77,7 +71,7 @@ const DesktopNav = () => {
             ))}
 
             <Box key={"Contact Us"}>
-                <HoverNavLinks color={"var(--tedx-red)"} href={"#"}>
+                <HoverNavLinks color={"var(--tedx-red)"} href={"mailto:tedxecolepolytechnique@gmail.com"}>
                     {"Contact Us"}
                 </HoverNavLinks>
             </Box>
@@ -104,42 +98,92 @@ interface HoverLinksProps {
 }
 const HoverNavLinks = ({ children, href, color }: HoverLinksProps) => {
     return (
-        <MotionLink
-            initial="initial"
-            whileHover="hovered"
-            href={href}
-            position="relative"
-            display="block"
-            overflow="hidden"
-            whiteSpace="nowrap"
-            textDecorationLine={"none"}
-            fontWeight="medium"
-            textTransform="uppercase"
-            color={color ?? "white"}
-            _hover={{
-                color: "var(--tedx-red)",
-                transition: "color 0.2s ease-out",
+        <HashLink
+            to={href}
+            style={{
+                position: "relative",
+                display: "block",
+                overflow: "hidden",
+                whiteSpace: "nowrap",
+                textDecorationLine: "none",
+                fontWeight: "medium",
+                textTransform: "uppercase",
+                color: color ?? "white",
+                lineHeight: 1.5
             }}
-            lineHeight={1.5}
         >
-            <Box>
-                <MotionSpan
-                    variants={{ initial: { y: 0 }, hovered: { y: "-100%" } }}
-                    style={{ display: "inline-block" }}
-                    transition={{ duration: 0.2, ease: [0.25, 0.1, 0.25, 1] }}
-                >
-                    {children}
-                </MotionSpan>
-            </Box>
-            <Box position={"absolute"} inset={0}>
-                <MotionSpan
-                    variants={{ initial: { y: "100%" }, hovered: { y: 0 } }} //
-                    style={{ display: "inline-block" }}
-                    transition={{ duration: 0.2, ease: [0.25, 0.1, 0.25, 1] }}
-                >
-                    {children}
-                </MotionSpan>
-            </Box>
-        </MotionLink>
+            <motion.div
+                initial="initial"
+                whileHover="hovered"
+                style={{
+                    position: "relative",
+                    display: "block"
+                }}
+            >
+                <Box>
+                    <motion.span
+                        variants={{
+                            initial: { y: 0, color: color ?? "white" },
+                            hovered: { y: "-100%", color: "var(--tedx-red)" }
+                        }}
+                        style={{ display: "inline-block" }}
+                        transition={{ duration: 0.2, ease: [0.25, 0.1, 0.25, 1] }}
+                    >
+                        {children}
+                    </motion.span>
+                </Box>
+                <Box position={"absolute"} inset={0}>
+                    <motion.span
+                        variants={{
+                            initial: { y: "100%", color: color ?? "white" },
+                            hovered: { y: 0, color: "var(--tedx-red)" }
+                        }}
+                        style={{ display: "inline-block" }}
+                        transition={{ duration: 0.2, ease: [0.25, 0.1, 0.25, 1] }}
+                    >
+                        {children}
+                    </motion.span>
+                </Box>
+            </motion.div>
+        </HashLink>
+
+        // <MotionLink
+        //     initial="initial"
+        //     whileHover="hovered"
+        //     href={href}
+        //     position="relative"
+        //     display="block"
+        //     overflow="hidden"
+        //     whiteSpace="nowrap"
+        //     textDecorationLine={"none"}
+        //     fontWeight="medium"
+        //     textTransform="uppercase"
+        //     color={color ?? "white"}
+        //     _hover={{
+        //         color: "var(--tedx-red)",
+        //         transition: "color 0.2s ease-out",
+        //     }}
+        //     lineHeight={1.5}
+        // >
+        //     <Box>
+        //         <motion.span
+        //             variants={{ initial: { y: 0 }, hovered: { y: "-100%" } }}
+        //             style={{ display: "inline-block" }}
+        //             transition={{ duration: 0.2, ease: [0.25, 0.1, 0.25, 1] }}
+        //         >
+        //             {children}
+        //         </motion.span>
+        //     </Box>
+        //     <Box position={"absolute"} inset={0}>
+        //         <motion.span
+        //             variants={{ initial: { y: "100%" }, hovered: { y: 0 } }} //
+        //             style={{ display: "inline-block" }}
+        //             transition={{ duration: 0.2, ease: [0.25, 0.1, 0.25, 1] }}
+        //         >
+        //             {children}
+        //         </motion.span>
+        //     </Box>
+        // </MotionLink>
     );
 };
+
