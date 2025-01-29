@@ -31,3 +31,5 @@ src/components/ui/**
 learned.txt
 !src/components/ui/provider.tsx
 !src/components/ui/color-mode.tsx
+
+!public/images/**
