@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { Box, Flex, HStack, IconButton, Image, Link, Stack, useDisclosure } from "@chakra-ui/react";
-// import { MotionLink } from "@/components/MotionUtil";
 import ContainerUtil from "@/components/ContainerUtil";
 import { NAV_LINKS } from "@/Data";
 import { motion } from "framer-motion";

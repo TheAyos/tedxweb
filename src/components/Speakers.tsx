@@ -1,7 +1,5 @@
 import { SPEAKERS } from "@/Data";
-import { Card, Flex, HStack, Link, Image, Text, Box, Button } from "@chakra-ui/react";
-// import { MotionBox, MotionSpan, MotionSvg } from "./MotionUtil";
-// import { motion } from "framer-motion";
+import { Card, Flex, HStack, Link, Image, Text, Box } from "@chakra-ui/react";
 import { FaExternalLinkAlt } from "react-icons/fa";
 
 const Speakers = () => {

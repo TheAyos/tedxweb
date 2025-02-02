@@ -6,16 +6,16 @@ interface Props extends Omit<ContainerProps, 'children'> {
 }
 
 export default function ContainerUtil({ children, type = 'default', ...props }: Props) {
-    let maxW = {
-        lg: '80rem',
-        xl: '90rem',
-    }
-    if (type === 'small') {
-        maxW = {
-            lg: '70rem',
-            xl: '80rem',
-        }
-    }
+    // let maxW = {
+    //     lg: '80rem',
+    //     xl: '90rem',
+    // }
+    // if (type === 'small') {
+    //     maxW = {
+    //         lg: '70rem',
+    //         xl: '80rem',
+    //     }
+    // }
 
     return (
         <Container

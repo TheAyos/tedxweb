@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import HashLetterEffect from "../components/HashLetterEffect";
-import { Heading, Span, Image, VStack, Box, Grid, Text } from "@chakra-ui/react";
+// import HashLetterEffect from "../components/HashLetterEffect";
+import { Heading, Span, Image, VStack, Box } from "@chakra-ui/react";
 // import "../AppOld.css";
 // disables registration button when set to '#'
 const REGISTER_NOW_LINK = "#";

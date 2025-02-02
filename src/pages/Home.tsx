@@ -14,6 +14,11 @@ import Speakers from "@/components/Speakers";
 // -speakers linu up texAMS style
 //    cards nice stuff & more effects !!, opens pop up ? to speaker details
 
+// TODO: add back hashletter effect ?
+// TODO: fix bg color black/gray mismatch
+// TODO: fix add back announcer corners red (see screenshotCORNERS.png)
+// TODO: 
+
 const Home: React.FC = () => {
     return (
         <>
