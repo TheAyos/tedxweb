@@ -15,9 +15,11 @@ import Speakers from "@/components/Speakers";
 //    cards nice stuff & more effects !!, opens pop up ? to speaker details
 
 // TODO: add back hashletter effect ?
+// TODO: make footer prettier
 // TODO: fix bg color black/gray mismatch
 // TODO: fix add back announcer corners red (see screenshotCORNERS.png)
-// TODO: 
+// TODO: try to make announcer fit in 100vh again
+// TODO: optimize mobile : text sizes, announcer centering, past editions links, 
 
 const Home: React.FC = () => {
     return (
