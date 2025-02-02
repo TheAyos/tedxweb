@@ -44,7 +44,7 @@ const HzScroll: React.FC = () => {
 
     return (
         <>
-            <Text as="h2" id="gallery" alignSelf="center" fontSize={"6xl"} pos={"relative"} mt={20} right={{ base: "0%", md: "25%" }}>
+            <Text as="h2" id="gallery" alignSelf="center" fontSize={"4xl"} pos={"relative"} mt={20} right={{ base: "0%", md: "25%" }}>
                 Highlights
             </Text>
             <div className="gallery">

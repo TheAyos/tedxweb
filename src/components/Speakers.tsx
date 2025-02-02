@@ -1,19 +1,24 @@
 import { SPEAKERS } from "@/Data";
-import { Card, Flex, HStack, Link, Image, Text, Box } from "@chakra-ui/react";
+import { Card, Flex, HStack, Link, Image, Text, Box, Span } from "@chakra-ui/react";
 import { FaExternalLinkAlt } from "react-icons/fa";
 
 const Speakers = () => {
     return (
         <>
-            <Flex id="speakers" justify="space-around" flexWrap="wrap" py={10} gap={20} boxSizing={"border-box"}>
-                <HStack width={"full"}>
-                    <Text as={"h2"} id="events" fontSize={"3xl"} fontWeight={"medium"} textAlign={"left"}>
-                        Speakers
-                    </Text>
-                </HStack>
-                {SPEAKERS[2024]
-                    // .sort(() => Math.random() - 0.5)
-                    .map((s, i) => (
+            <HStack width={"full"} mt={10}>
+                <Text as={"h2"} id="speakers" fontSize={"4xl"} fontWeight={"medium"} textAlign={"left"}>
+                    Speakers
+                </Text>
+            </HStack>
+
+            {SPEAKERS.map((edition, i) => (
+                <Flex key={i} justify="space-around" flexWrap="wrap" py={10} gap={20} boxSizing={"border-box"}>
+                    <Box width="full">
+                        <Text as="h2" fontSize="4xl" fontWeight="bold" mb={8} color="white">
+                            <Span color="var(--tedx-red)">{edition.year}</Span>
+                        </Text>
+                    </Box>
+                    {edition.speakers.map((s, i) => (
                         <Card.Root
                             key={i}
                             maxW={{ base: "100%", md: "sm" }}
@@ -69,7 +74,8 @@ const Speakers = () => {
                             </Box>
                         </Card.Root>
                     ))}
-            </Flex>
+                </Flex >
+            ))}
         </>
     );
 };

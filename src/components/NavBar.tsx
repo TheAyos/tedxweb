@@ -70,7 +70,7 @@ const DesktopNav = () => {
             ))}
 
             <Box key={"Contact Us"}>
-                <HoverNavLinks color={"var(--tedx-red)"} href={"mailto:tedxecolepolytechnique@gmail.com"}>
+                <HoverNavLinks color={"var(--tedx-red)"} href={"mailto:TEDx.EcolePolytechnique@gmail.com"}>
                     {"Contact Us"}
                 </HoverNavLinks>
             </Box>

@@ -24,15 +24,13 @@ const Partners: React.FC = () => {
 
             <Box as="section" bg="black" py={16}>
                 <VStack maxW="container.xl" mx="auto" gap={12} px={{ base: 8, md: "10vw" }}>
-                    {SPONSORS.map((e) => (
-
-
-                        <Box width="full">
+                    {SPONSORS.map((edition, i) => (
+                        <Box width="full" key={i}>
                             <Text as="h2" fontSize="4xl" fontWeight="bold" mb={8} color="white">
-                                <Span color="var(--tedx-red)">{e.year}</Span> Edition Partners
+                                <Span color="var(--tedx-red)">{edition.year}</Span> Edition Partners
                             </Text>
                             <Grid templateColumns={{ base: "1fr", md: "repeat(3, 1fr)", lg: "repeat(4, 1fr)" }} gap={8}>
-                                {e.sponsors.map((imgPath, i) => (
+                                {edition.sponsors.map((imgPath, i) => (
                                     <Box
                                         key={i}
                                         bg="white"

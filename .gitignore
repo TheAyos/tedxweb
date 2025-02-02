@@ -33,3 +33,4 @@ learned.txt
 !src/components/ui/color-mode.tsx
 
 !public/images/**
+*.psd

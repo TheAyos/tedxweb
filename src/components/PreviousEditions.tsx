@@ -7,7 +7,7 @@ import { FiArrowRight } from "react-icons/fi";
 const PreviousEditions = () => {
     return (
         <>
-            <Text as={"h2"} id="events" fontSize={"3xl"} fontWeight={"medium"} textAlign={"center"} mt={10} mb={6}>
+            <Text as={"h2"} id="events" fontSize={"4xl"} fontWeight={"medium"} textAlign={"center"} mt={10} mb={6}>
                 Previous Editions <Span color="var(--tedx-red)">2022-2024</Span>
             </Text>
 
