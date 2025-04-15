@@ -165,10 +165,10 @@ const Announcer = () => {
                             <RouteLink
                                 to={REGISTER_NOW_LINK}
                                 className="group block bg-red-600 hover:bg-white hover:text-black transition-all duration-300"
-                                onClick={(e) => (REGISTER_NOW_LINK.length > 1) && e.preventDefault()}
+                                onClick={(e) => (REGISTER_NOW_LINK.length < 2) && e.preventDefault()}
                                 target="_blank"
                                 style={
-                                    (REGISTER_NOW_LINK.length > 1)
+                                    (REGISTER_NOW_LINK.length < 2)
                                         ? {
                                             pointerEvents: "none",
                                             opacity: 0.7,
@@ -178,7 +178,7 @@ const Announcer = () => {
                                 }
                             >
                                 <div className="flex items-center justify-between p-4">
-                                    <span className="font-mono text-lg font-bold">REGISTER NOW{(REGISTER_NOW_LINK.length > 1) ? " (COMING SOON)" : ""}</span>
+                                    <span className="font-mono text-lg font-bold">REGISTER NOW{(REGISTER_NOW_LINK.length < 2) ? " (COMING SOON)" : ""}</span>
                                     <span className="font-mono text-lg transform group-hover:translate-x-2 transition-transform duration-300">→</span>
                                 </div>
                             </RouteLink>
