@@ -53,8 +53,37 @@ export const SPONSORS = [
 //TODO: add 2023
 export const SPEAKERS = [
     {
-        year: "2025 (Upcoming...)",
-        speakers: []
+        year: "2025",
+        speakers: [
+            {
+                image: "/images/2025/hugo.jpg",
+                name: "Hugo Caselles-Dupré",
+                speech_title: "Creating an AI that can literally read my mind",
+                speech_description: "Hugo Caselles-Dupré is a French researcher and artist specializing in machine learning in the context of AI art. He co-founded Obvious, renowned for creating 'Edmond de Belamy', the first AI-generated artwork that was successfully sold at an auction. Today, Hugo serves the role of Research Director at the Obvious Collective, working on topics in generative AI. His work has been exhibited at institutions like the Hermitage Museum, and he was recognized in Forbes' '30 Under 30.'",
+                speech_link: "",
+            },
+            {
+                image: "/images/2025/alexis.png",
+                name: "Alexis Gatignol",
+                speech_title: "Autopsy of a Formula 1 team",
+                speech_description: "Alexis Gatignol, an École Polytechnique alumnus and former student researcher at UC Berkeley, brings a wealth of experience in F1 engineering and innovation. Having worked in Vehicle Performance & Race Strategy at Red Bull Racing, he now plays a key role at Alpine F1 Team, leading upstream development and power unit innovation. His expertise extends to advanced simulation tools, hybrid energy optimization, and structural trade-offs for the 2026 F1 Power Unit. He offers a unique perspective on the challenges and breakthroughs shaping the future of F1 technology.",
+                speech_link: "",
+            },
+            {
+                image: "/images/2025/pascal.jpg",
+                name: "Pascal Hofstein",
+                speech_title: "Between invention and novelty",
+                speech_description: "Pascal Hofstein is a French architect celebrated for his international career between France and the US, and his commitment to responsible design. His academic journey includes teaching roles at esteemed institutions such as Columbia University and the New York Institute of Technology. As founder of Hofstein Projects, he has executed a wide range of projects—from educational and public buildings to healthcare and cultural facilities. In addition to his professional practice, he has served as President of the Société Française des Architectes from 2012 to 2016, actively contributing to the evolution of contemporary architecture.",
+                speech_link: "",
+            },
+            {
+                image: "/images/2025/philippe.jpg",
+                name: "Philippe de Lur Saluces",
+                speech_title: "",
+                speech_description: "Philippe de Lur Saluces holds a degree from KEDGE Business School and has extensive international experience in wine importation and distribution, having worked notably in London, Beijing, and Shanghai. As leader of Château de Fargues, a prestigious vineyard, he focuses on strategic partnerships with acclaimed chefs and maintains selective, quality-driven distribution. Philippe also develops rural tourism and gastronomy projects in the Landes region, emphasizing innovation and sustainability.",
+                speech_link: "",
+            },
+        ]
     },
     {
         year: "2024",

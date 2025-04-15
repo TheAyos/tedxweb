@@ -40,6 +40,7 @@ const Speakers = () => {
                                     opacity: 1,
                                 }
                             }}
+                            // fancy hover blob
                             _before={{
                                 content: '""',
                                 position: 'absolute',
@@ -57,7 +58,34 @@ const Speakers = () => {
                             }}
                         >
                             <Box position="relative" zIndex={1}>
-                                <Image src={s.image} height={60} width="100%" objectFit="cover" objectPosition="top" />
+                                {/* <Image src={s.image} height={60} width="100%" objectFit="contain" objectPosition="top" /> */}
+                                <Box position="relative" zIndex={1}
+                                    overflowY={"clip"}>
+                                    <Box
+                                        position="absolute"
+                                        top={0}
+                                        left={0}
+                                        right={0}
+                                        height="60"
+                                        width="100%"
+                                        backgroundImage={`url(${s.image})`}
+                                        backgroundPosition="50%"
+                                        backgroundSize="cover"
+                                        backgroundOrigin={"border-box"}
+                                        backgroundClip={"padding-box"}
+                                        filter="blur(20px) opacity(0.7)"
+                                        transform="scale(1.1)"
+                                    />
+                                    <Image
+                                        src={s.image}
+                                        height={60}
+                                        width="100%"
+                                        objectFit="contain"
+                                        objectPosition="top"
+                                        position="relative"
+                                        zIndex={2}
+                                    />
+                                </Box>
                                 <Card.Body>
                                     <Card.Title fontWeight="medium">{s.speech_title}</Card.Title>
                                     <Card.Description textAlign={"justify"}>{s.speech_description}</Card.Description>
@@ -65,12 +93,14 @@ const Speakers = () => {
                                         {s.name}
                                     </Text>
                                 </Card.Body>
-                                <Card.Footer gap="2">
-                                    <Link fontSize="sm" fontWeight="medium" bg="red" px={4} py={2} href={s.speech_link} target="_blank" borderRadius="md">
-                                        Tell me more
-                                        <FaExternalLinkAlt />
-                                    </Link>
-                                </Card.Footer>
+                                {s.speech_link && (
+                                    <Card.Footer gap="2">
+                                        <Link fontSize="sm" fontWeight="medium" bg="red" px={4} py={2} href={s.speech_link} target="_blank" borderRadius="md">
+                                            Tell me more
+                                            <FaExternalLinkAlt />
+                                        </Link>
+                                    </Card.Footer>
+                                )}
                             </Box>
                         </Card.Root>
                     ))}

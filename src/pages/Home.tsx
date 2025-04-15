@@ -9,7 +9,12 @@ import PreviousEditions from "@/components/PreviousEditions";
 import Speakers from "@/components/Speakers";
 import { Intro } from "@/components/Intro";
 
-// TODO: optimize imgs
+// TODO: optimize imgs :::::::::
+// TODO: optimize imgs :::::::::
+// TODO: optimize imgs :::::::::
+// TODO: optimize imgs :::::::::
+// TODO: optimize imgs :::::::::
+// TODO: optimize imgs :::::::::
 // -sth like why tedxecole poly ?
 // -timetable with videos (for ex: interlude musical)
 // -speakers linu up texAMS style

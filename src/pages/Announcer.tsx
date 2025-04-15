@@ -5,7 +5,8 @@ import { Heading, Link, Span, Image, Box, HStack } from "@chakra-ui/react";
 import { FaInstagram, FaLinkedin } from "react-icons/fa";
 // import "../AppOld.css";
 // disables registration button when set to '#'
-const REGISTER_NOW_LINK = "#";
+// const REGISTER_NOW_LINK = "#";
+const REGISTER_NOW_LINK = "https://form.typeform.com/to/iUEony5G";
 
 const Announcer = () => {
     return (
@@ -49,11 +50,14 @@ const Announcer = () => {
                             <Box display="flex" justifyContent="center" alignItems="center" w="100%" mt={{ base: 0, lg: 20 }}>
                                 <Image
                                     src="images/2025/event-banner-square.jpg"
+                                    // src="images/2025/poster.jpg"
                                     alt="Evolving patterns 2025 edition banner"
-                                    maxH="350px"
+                                    // maxH="350px"
+                                    maxH="450px"
                                     w={{ base: "60%", md: "80%" }}
                                     objectFit="contain"
                                     className="shake-effect"
+                                    mb={{ base: "2em", md: "0" }}
                                 />
                             </Box>
                         </motion.div>
@@ -147,11 +151,11 @@ const Announcer = () => {
                                 </div>
                                 <div className="flex justify-between items-center border-b border-white/10 pb-4">
                                     <span className="text-sm opacity-60">TIME</span>
-                                    <span className="text-lg">TBD</span>
+                                    <span className="text-lg">18:30</span>
                                 </div>
                                 <div className="flex justify-between items-center border-b border-white/10 pb-4">
                                     <span className="text-sm opacity-60">VENUE</span>
-                                    <span className="text-lg">GRAND HALL</span>
+                                    <span className="text-lg">Amphi Poincaré (.K)</span>
                                 </div>
                             </div>
                         </div>
@@ -161,9 +165,10 @@ const Announcer = () => {
                             <RouteLink
                                 to={REGISTER_NOW_LINK}
                                 className="group block bg-red-600 hover:bg-white hover:text-black transition-all duration-300"
-                                onClick={(e) => REGISTER_NOW_LINK == "#" && e.preventDefault()}
+                                onClick={(e) => (REGISTER_NOW_LINK.length > 1) && e.preventDefault()}
+                                target="_blank"
                                 style={
-                                    REGISTER_NOW_LINK == "#"
+                                    (REGISTER_NOW_LINK.length > 1)
                                         ? {
                                             pointerEvents: "none",
                                             opacity: 0.7,
@@ -173,7 +178,7 @@ const Announcer = () => {
                                 }
                             >
                                 <div className="flex items-center justify-between p-4">
-                                    <span className="font-mono text-lg font-bold">REGISTER NOW{REGISTER_NOW_LINK == "#" ? " (COMING SOON)" : ""}</span>
+                                    <span className="font-mono text-lg font-bold">REGISTER NOW{(REGISTER_NOW_LINK.length > 1) ? " (COMING SOON)" : ""}</span>
                                     <span className="font-mono text-lg transform group-hover:translate-x-2 transition-transform duration-300">→</span>
                                 </div>
                             </RouteLink>
