@@ -1,22 +1,43 @@
 import { EDITIONS } from "@/Data";
-import { Box, Text, Span } from "@chakra-ui/react";
+import { Box, VStack, Text, Span } from "@chakra-ui/react";
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 import { useRef } from "react";
 import { FiArrowRight } from "react-icons/fi";
 
 const PreviousEditions = () => {
     return (
-        <>
-            <Text as={"h2"} id="events" fontSize={"4xl"} fontWeight={"medium"} textAlign={"center"} mt={10} mb={6}>
-                Previous Editions <Span color="var(--tedx-red)">2022-2024</Span>
-            </Text>
+        <Box as="section" width="full" py={12}>
+            <Box id="PreviousEditions" />
+            <VStack
+                maxW="container.xl"
+                mx="auto"
+                px={{ base: 8, md: "10vw" }}
+                align="stretch"
+            >
+                <Text
+                    as="h2"
+                    id="events"
+                    fontSize="4xl"
+                    fontWeight="medium"
+                    mt={10}
+                    mb={12}
+                    textAlign="left"
+                    width="full"
+                >
+                    Previous Editions <Span color="var(--tedx-red)">2023-2025</Span>
+                </Text>
 
-            <Box as="section" width="full" py={12} px={8}>
                 {EDITIONS.map((ed, i) => (
-                    <CrazyLink key={i} heading={ed.title} subheading={ed.theme} imgSrc={ed.image} href={ed.link} />
+                    <CrazyLink
+                        key={i}
+                        heading={ed.title}
+                        subheading={ed.theme}
+                        imgSrc={ed.image}
+                        href={ed.link}
+                    />
                 ))}
-            </Box>
-        </>
+            </VStack>
+        </Box>
     );
 };
 

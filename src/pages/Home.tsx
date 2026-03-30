@@ -7,6 +7,9 @@ import { Flex } from "@chakra-ui/react";
 import HzScroll from "@/components/HzScroll";
 import PreviousEditions from "@/components/PreviousEditions";
 import Speakers from "@/components/Speakers";
+import PartnersMain from "@/components/PartnersMain";
+import Contacts from "@/components/Contacts";
+
 import { Intro } from "@/components/Intro";
 
 // TODO: optimize imgs :::::::::
@@ -32,9 +35,11 @@ const Home: React.FC = () => {
             <Flex as="main" alignItems={"center"} flexDirection={"column"} textAlign={"justify"} color="white" maxW="container.xl" py={12} px={{ base: 8, md: "10vw" }}>
                 <Intro />
                 <Speakers />
+                <PartnersMain />
                 <PreviousEditions />
                 <HzScroll />
                 <TheTeam />
+                <Contacts />
             </Flex>
 
             <Footer />

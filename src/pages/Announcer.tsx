@@ -1,12 +1,11 @@
 import { motion } from "framer-motion";
 import { Link as RouteLink } from "react-router-dom";
 // import HashLetterEffect from "../components/HashLetterEffect";
-import { Heading, Link, Span, Image, Box, HStack } from "@chakra-ui/react";
+import { Heading, Link, Span, Image, Box, Text, HStack } from "@chakra-ui/react";
 import { FaInstagram, FaLinkedin } from "react-icons/fa";
 // import "../AppOld.css";
 // disables registration button when set to '#'
-// const REGISTER_NOW_LINK = "#";
-const REGISTER_NOW_LINK = "https://form.typeform.com/to/iUEony5G";
+const REGISTER_NOW_LINK = "#";
 
 const Announcer = () => {
     return (
@@ -26,14 +25,14 @@ const Announcer = () => {
                             <div>
 
                                 <div className="mb-2">
-                                    <Image src="logo.png" alt="TEDxÉcolePolytechnique logo" width={"80%"} height={"auto"} className="shake-effect" />
+                                    <Image src="logo.png" alt="TEDxÉcolePolytechnique logo" width={"80%"} height={"auto"} />
 
                                 </div>
 
                                 <div className="space-y-4">
                                     <Heading
                                         as="h1"
-                                        className="shake-effect"
+                                        // className="shake-effect"
                                         textAlign="left"
                                         fontSize={{ base: "7vw", sm: "12vw", md: "10vw", lg: "4vw" }}
                                         fontWeight="bold"
@@ -41,7 +40,7 @@ const Announcer = () => {
                                         letterSpacing="tight"
                                         mb={8}
                                     >
-                                        <Span color="var(--tedx-red)">2025</Span> <Span>Edition</Span>
+                                        <Span color="var(--tedx-red)">2026</Span> <Span>Edition</Span>
                                     </Heading>
                                 </div>
 
@@ -50,14 +49,11 @@ const Announcer = () => {
                             <Box display="flex" justifyContent="center" alignItems="center" w="100%" mt={{ base: 0, lg: 20 }}>
                                 <Image
                                     src="images/2025/event-banner-square.jpg"
-                                    // src="images/2025/poster.jpg"
                                     alt="Evolving patterns 2025 edition banner"
-                                    // maxH="350px"
-                                    maxH="450px"
+                                    maxH="350px"
                                     w={{ base: "60%", md: "80%" }}
                                     objectFit="contain"
                                     className="shake-effect"
-                                    mb={{ base: "2em", md: "0" }}
                                 />
                             </Box>
                         </motion.div>
@@ -140,18 +136,23 @@ const Announcer = () => {
                     {/* Event details */}
                     <motion.div initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.3 }} className="md:space-y-12">
                         <div className="space-y-6">
-                            <span className="font-mono text-xs tracking-[0.2em] bg-red-600 px-4 py-2 inline-block" style={{ backgroundColor: "var(--tedx-red)" }}>
+                            <Box color="var(--tedx-red)" border="1px solid" borderColor="var(--tedx-red)" px={6} py={4}>
+                                <Text fontFamily="mono" fontSize="lg">
+                                    SAVE THE DATE
+                                </Text>
+                            </Box>
+                            {/* <span className="font-mono text-xs tracking-[0.2em] bg-red-600 px-4 py-2 inline-block" style={{ backgroundColor: "var(--tedx-red)" }}>
                                 SAVE THE DATE
-                            </span>
+                            </span> */}
 
                             <div className="space-y-4 font-mono">
                                 <div className="flex justify-between items-center border-b border-white/10 pb-4">
                                     <span className="text-sm opacity-60">DATE</span>
-                                    <span className="text-lg">6th May 2025</span>
+                                    <span className="text-lg">12th of May</span>
                                 </div>
                                 <div className="flex justify-between items-center border-b border-white/10 pb-4">
                                     <span className="text-sm opacity-60">TIME</span>
-                                    <span className="text-lg">18:30</span>
+                                    <span className="text-lg">TBD</span>
                                 </div>
                                 <div className="flex justify-between items-center border-b border-white/10 pb-4">
                                     <span className="text-sm opacity-60">VENUE</span>
@@ -165,10 +166,9 @@ const Announcer = () => {
                             <RouteLink
                                 to={REGISTER_NOW_LINK}
                                 className="group block bg-red-600 hover:bg-white hover:text-black transition-all duration-300"
-                                onClick={(e) => (REGISTER_NOW_LINK.length < 2) && e.preventDefault()}
-                                target="_blank"
+                                onClick={(e) => REGISTER_NOW_LINK == "#" && e.preventDefault()}
                                 style={
-                                    (REGISTER_NOW_LINK.length < 2)
+                                    REGISTER_NOW_LINK == "#"
                                         ? {
                                             pointerEvents: "none",
                                             opacity: 0.7,
@@ -178,7 +178,7 @@ const Announcer = () => {
                                 }
                             >
                                 <div className="flex items-center justify-between p-4">
-                                    <span className="font-mono text-lg font-bold">REGISTER NOW{(REGISTER_NOW_LINK.length < 2) ? " (COMING SOON)" : ""}</span>
+                                    <span className="font-mono text-lg font-bold">REGISTER NOW{REGISTER_NOW_LINK == "#" ? " (COMING SOON)" : ""}</span>
                                     <span className="font-mono text-lg transform group-hover:translate-x-2 transition-transform duration-300">→</span>
                                 </div>
                             </RouteLink>
@@ -202,32 +202,37 @@ const Announcer = () => {
 
                         {/* <div className="border-t border-white/20 pt-8"> */}
                         <div className="md:pt-8 md:block flex">
-                            <div className="font-mono text-[10px] text-red-600 uppercase tracking-widest flex items-center">Connect With Us</div>
+                            <div className="font-mono text-[15px] text-red-600 uppercase tracking-widest flex items-center">Connect With Us</div>
 
                             <HStack
                                 gap={6}
-                                py={{ base: 0, md: 4 }}
+                                py={{ base: 4, md: 4 }}
                                 px={{ base: 4, md: 2 }}
-                                _hover={{ "& > *": { transform: "scale(1.2)", color: "var(--tedx-red)" } }}
-                                style={{ transition: "all 0.3s ease-in-out" }}
                             >
                                 <Link
                                     href="https://www.instagram.com/tedx.ecolepolytechnique/"
                                     target="_blank"
-                                    _hover={{ color: "white", transform: "rotate(8deg)" }}
-                                    transition="all 0.3s ease-in-out"
                                     display="flex"
                                 >
+                                    <Box 
+                                    transition="all 0.3s ease-in-out"
+                                    _hover={{ transform: "scale(1.2) rotate(8deg)", color: "var(--tedx-red)" }}
+                                    >
                                     <FaInstagram size="28px" />
+                                    </Box>
                                 </Link>
                                 <Link
                                     href="https://www.linkedin.com/company/tedx%C3%A9colepolytechnique2023/posts/"
                                     target="_blank"
-                                    _hover={{ color: "white", transform: "rotate(-8deg)" }}
-                                    transition="all 0.3s ease-in-out"
                                     display="flex"
                                 >
+                                    <Box 
+                                    transition="all 0.3s ease-in-out"
+                                    _hover={{ transform: "scale(1.2) rotate(8deg)", color: "var(--tedx-red)" }}
+                                    >
                                     <FaLinkedin size="28px" />
+                                    </Box>
+
                                 </Link>
                             </HStack>
                             {/* <div className="flex gap-6">

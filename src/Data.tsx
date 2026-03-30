@@ -1,13 +1,19 @@
 export const NAV_LINKS = [
     { label: "Speakers", href: "/#speakers" },
-    { label: "Events", href: "/#events" },
-    { label: "Gallery", href: "/#gallery" },
+    { label: "Events", href: "/#PreviousEditions" },
+    { label: "Gallery", href: "/#hzscroll" },
     // TODO: { label: "Schedule", href: "#schedule" },
     { label: "Partners", href: "/partners#top" },
-    { label: "The Team", href: "/#theteam" },
+    { label: "The Team", href: "/team#top" },
 ];
 
 export const EDITIONS = [
+    {
+        image: "/images/2025/event-banner-square.jpg",
+        title: "Evolving Patterns",
+        theme: "TEDxÉcolePolytechnique 2025",
+        link: "https://www.ted.com/tedx/events/60973",
+    },
     {
         image: "/images/2024/thumb.jpg",
         title: "Hidden Variables",
@@ -24,66 +30,54 @@ export const EDITIONS = [
 
 export const SPONSORS = [
     {
-        year: "(Upcoming...)  2025",
+        year: "(Upcoming...)  2026",
         sponsors: [
-            "/images/2025/sponsors/ipp.png",
-            "/images/2025/sponsors/_upcoming.png",
+            {image: "/images/2025/sponsors/ipp.png",
+                url: "https://www.ip-paris.fr/"},
+            {image: "/images/2025/sponsors/_upcoming.png",
+                url: ""}
+        ]
+    },
+    {
+        year: "2025",
+        sponsors: [
+            {image: "/images/2025/sponsors/ipp.png",
+                url:"https://www.ip-paris.fr/"}
         ]
     },
     {
         year: "2024",
         sponsors: [
-            "/images/2024/sponsors/ipp.png",
-            "/images/2024/sponsors/edf-lab.png",
-            "/images/2024/sponsors/edf-lab-2.png",
+            {image: "/images/2024/sponsors/ipp.png",
+                url:"https://www.ip-paris.fr/"},
+            {image: "/images/2024/sponsors/edf-lab.png",
+                url:"https://www.edf.fr/groupe-edf/inventer-l-avenir-de-l-energie/rd-un-savoir-faire-mondial/nos-activites/edf-innovation-lab-usa"},
+            {image: "/images/2024/sponsors/edf-lab-2.png",
+                url:"https://www.edf-innovation-lab.com/"}
         ]
     },
     {
         year: "2023",
         sponsors: [
-            "/images/2023/sponsors/ipp.png",
-            "/images/2023/sponsors/onepoint.png",
-            "/images/2023/sponsors/send-up.png",
-            "/images/2023/sponsors/odc.png",
-            "/images/2023/sponsors/sten.jpg",
+            {image: "/images/2023/sponsors/ipp.png",
+                url:"https://www.ip-paris.fr/"},
+            {image: "/images/2023/sponsors/onepoint.png",
+                url:"https://www.groupeonepoint.com/fr/"},
+            {image: "/images/2023/sponsors/send-up.png",
+                url:"https://www.send-up.net/"},
+            {image: "/images/2023/sponsors/odc.png",
+                url:"https://www.odyssee-developpement.fr/?srsltid=AfmBOopTfyAsM7vgYd_gQnUR4WMTq-_m1y5-Lhi-18WYotsHwY5Ip6W1"},
+            {image: "/images/2023/sponsors/sten.jpg",
+                url:"https://stenventurecapital.com/"}
         ]
     }
 ];
 
-//TODO: add 2023
+
 export const SPEAKERS = [
     {
-        year: "2025",
-        speakers: [
-            {
-                image: "/images/2025/hugo.jpg",
-                name: "Hugo Caselles-Dupré",
-                speech_title: "Creating an AI that can literally read my mind",
-                speech_description: "Hugo Caselles-Dupré is a French researcher and artist specializing in machine learning in the context of AI art. He co-founded Obvious, renowned for creating 'Edmond de Belamy', the first AI-generated artwork that was successfully sold at an auction. Today, Hugo serves the role of Research Director at the Obvious Collective, working on topics in generative AI. His work has been exhibited at institutions like the Hermitage Museum, and he was recognized in Forbes' '30 Under 30.'",
-                speech_link: "",
-            },
-            {
-                image: "/images/2025/alexis.png",
-                name: "Alexis Gatignol",
-                speech_title: "Autopsy of a Formula 1 team",
-                speech_description: "Alexis Gatignol, an École Polytechnique alumnus and former student researcher at UC Berkeley, brings a wealth of experience in F1 engineering and innovation. Having worked in Vehicle Performance & Race Strategy at Red Bull Racing, he now plays a key role at Alpine F1 Team, leading upstream development and power unit innovation. His expertise extends to advanced simulation tools, hybrid energy optimization, and structural trade-offs for the 2026 F1 Power Unit. He offers a unique perspective on the challenges and breakthroughs shaping the future of F1 technology.",
-                speech_link: "",
-            },
-            {
-                image: "/images/2025/pascal.jpg",
-                name: "Pascal Hofstein",
-                speech_title: "Between invention and novelty",
-                speech_description: "Pascal Hofstein is a French architect celebrated for his international career between France and the US, and his commitment to responsible design. His academic journey includes teaching roles at esteemed institutions such as Columbia University and the New York Institute of Technology. As founder of Hofstein Projects, he has executed a wide range of projects—from educational and public buildings to healthcare and cultural facilities. In addition to his professional practice, he has served as President of the Société Française des Architectes from 2012 to 2016, actively contributing to the evolution of contemporary architecture.",
-                speech_link: "",
-            },
-            {
-                image: "/images/2025/philippe.jpg",
-                name: "Philippe de Lur Saluces",
-                speech_title: "",
-                speech_description: "Philippe de Lur Saluces holds a degree from KEDGE Business School and has extensive international experience in wine importation and distribution, having worked notably in London, Beijing, and Shanghai. As leader of Château de Fargues, a prestigious vineyard, he focuses on strategic partnerships with acclaimed chefs and maintains selective, quality-driven distribution. Philippe also develops rural tourism and gastronomy projects in the Landes region, emphasizing innovation and sustainability.",
-                speech_link: "",
-            },
-        ]
+        year: "2025 (Upcoming...)",
+        speakers: []
     },
     {
         year: "2024",
@@ -132,6 +126,33 @@ export const SPEAKERS = [
         ],
     }]
 
+export const CONTACTS= [
+    {
+        board_members: [
+            {
+                image: "/images/2026/adam1.jpg",
+                name: "Adam Kuny",
+                title: "President of TEDX",
+                email: "adam.kuny@polytechnique.edu",
+                email2: "TEDx.EcolePolytechnique@gmail.com"
+            },
+            {
+                image: "/images/2026/maxime.jpg",
+                name: "Maxime Khuat-Duy",
+                title: "Head of Sponsors’ Relations",
+                email: "maxime.khuat-duy@polytechnique.edu",
+                email2: ""
+            },
+            {
+                image: "/images/2026/ted.jpg",
+                name: "Ted Qamo",
+                title: "Head of Speakers’ Relations",
+                email: "ted.qamo@polytechnique.edu",
+                email2: ""
+            }
+        ]
+    }]
+
 //TODO: select more images
 export const IMAGES = [
     "/images/2024/faq-fun.jpg",
@@ -141,6 +162,36 @@ export const IMAGES = [
     "/images/2024/faq-focus.jpg",
     "/images/2024/yohan-inspirant.jpg",
     "/images/2024/larrieu-content.png",
+    "/images/2026/patterns1.jpg",
+    "/images/2026/patterns2.jpg",
+    "/images/2026/patterns3.jpg",
+    "/images/2026/patterns4.jpg",
+    "/images/2026/patterns5.jpg",
+    "/images/2026/patterns6.jpg",
+    "/images/2026/patterns7.jpg",
+    "/images/2026/patterns8.jpg",
+    "/images/2026/patterns9.jpg",
+    "/images/2026/patterns10.jpg",
+    "/images/2026/patterns11.jpg",
+    "/images/2026/patterns12.jpg",
+    "/images/2026/patterns13.jpg",
+    "/images/2026/patterns14.jpg",
+];
+export const BOARD_IMAGES = [
+    "/images/2026/everyone.jpg",
+    "/images/2026/everyone_funny.jpg",
+    "/images/2026/board.jpg",
+    "/images/2026/design.jpg",
+    "/images/2026/speaker.jpg",
+    "/images/2026/sponsor.jpg",
+    "/images/2026/adam1.jpg",
+    "/images/2026/anne.jpg",
+    "/images/2026/ted.jpg",
+    "/images/2026/maxime.jpg",
+    "/images/2026/anselme.jpg",
+    "/images/2026/design_funny.jpg",
+    "/images/2026/speaker_funny.jpg",
+    "/images/2026/sponsor_funny.jpg"
 ];
 // {/* <img className="image" src="\images\2024\larrieu-inspirant-de-ouf.JPG" draggable="false" /> */}
 // {/* <img className="image" src="\images\2024\yohan-x-blaise.JPG" draggable="false" /> */}
