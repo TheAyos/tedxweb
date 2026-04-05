@@ -5,7 +5,7 @@ interface Props extends Omit<ContainerProps, 'children'> {
     as?: React.ElementType // Allow specifying a different components type
 }
 
-export default function ContainerUtil({ children, type = 'default', ...props }: Props) {
+export default function ContainerUtil({ children, ...props }: Props) {
     // let maxW = {
     //     lg: '80rem',
     //     xl: '90rem',

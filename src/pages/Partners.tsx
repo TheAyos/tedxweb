@@ -1,7 +1,7 @@
 import React from "react";
 import Footer from "@/components/Footer";
 import NavBar from "@/components/NavBar";
-import { Box, Text, Link as ChakraLink, VStack, Card, Grid, Span } from "@chakra-ui/react";
+import { Box, Text, Link as ChakraLink, VStack, Grid, Span } from "@chakra-ui/react";
 import { SPONSORS } from "@/Data";
 import { HashLink as RouteLink } from "react-router-hash-link";
 

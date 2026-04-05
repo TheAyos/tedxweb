@@ -1,7 +1,7 @@
 import React from "react";
 import Footer from "@/components/Footer";
 import NavBar from "@/components/NavBar";
-import { Box, Text, Flex, HStack, Link, Image, Card, VStack, Grid, Span } from "@chakra-ui/react";
+import { Box, Text, Flex, Link, Image, Card, VStack, Span } from "@chakra-ui/react";
 import { SPEAKERS_OLD } from "@/Data";
 import { FaExternalLinkAlt } from "react-icons/fa";
 import { HashLink as RouteLink } from "react-router-hash-link";
@@ -10,7 +10,7 @@ const PreviousSpeakers: React.FC = () => {
     return (
         <>
             <NavBar />
-            <Box id="previousSpeakers1" />
+            <Box id="top" />
 
             <Box as="section" bg="black" pt={16}>
                 <VStack maxW="container.xl" gap={9} mx="auto" px={{ base: 8, md: "10vw" }}>

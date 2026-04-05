@@ -91,6 +91,7 @@ import { IMAGES } from "@/Data";
 
 const HzScroll: React.FC = () => {
   const [current, setCurrent] = useState(0);
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
   const prevSlide = () => {
     setCurrent((prev) => (prev === 0 ? IMAGES.length - 1 : prev - 1));
@@ -101,8 +102,6 @@ const HzScroll: React.FC = () => {
   };
 
   if (!IMAGES.length) return null;
-
-  const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
   return (
     <>

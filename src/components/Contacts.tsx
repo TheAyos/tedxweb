@@ -1,7 +1,5 @@
 import { CONTACTS } from "@/Data";
-import { Card, Flex, HStack, Container, VStack, Link, Image, Text, Box, Span } from "@chakra-ui/react";
-import { FaExternalLinkAlt } from "react-icons/fa";
-import { Link as RouteLink } from "react-router-dom";
+import { Card, HStack, Container, Text, Box, Flex, Image } from "@chakra-ui/react";
 
 const Contacts = () => {
     return (

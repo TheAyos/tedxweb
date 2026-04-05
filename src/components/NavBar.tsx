@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
-import { Box, Flex, HStack, IconButton, Image, Link, Stack, useDisclosure } from "@chakra-ui/react";
+import { Box, Flex, HStack, IconButton, Image, Stack, useDisclosure } from "@chakra-ui/react";
 import ContainerUtil from "@/components/ContainerUtil";
 import { NAV_LINKS } from "@/Data";
 import { motion } from "framer-motion";
 import { HashLink } from 'react-router-hash-link';
+import { Link as RouterLink } from 'react-router-dom';
 
 const NavBar: React.FC = () => {
     const { open, onToggle } = useDisclosure();
@@ -35,9 +36,9 @@ const NavBar: React.FC = () => {
         >
             <ContainerUtil>
                 <Flex className="flex justify-between md:justify-start items-center px-0 md:px-8">
-                    <Link href="/" className="focus:outline-none">
+                    <RouterLink to="/" className="focus:outline-none">
                         <Image src="logo.png" alt="logo" className="h-12 w-auto" />
-                    </Link>
+                    </RouterLink>
                     <IconButton size="md" children={open ? <FaTimes /> : <FaBars />} className="md:hidden" aria-label="Open Mobile Menu" onClick={onToggle} color="red" />
                     <Box className="hidden md:block ml-auto">
                         <DesktopNav />

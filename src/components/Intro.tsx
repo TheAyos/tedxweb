@@ -1,4 +1,4 @@
-import { Box, Grid, Text, VStack, Flex } from "@chakra-ui/react";
+import { Box, Grid, Text, VStack } from "@chakra-ui/react";
 
 export const Intro = () => {
   return (

@@ -48,12 +48,11 @@ const Announcer = () => {
 
                             <Box display="flex" justifyContent="center" alignItems="center" w="100%" mt={{ base: 0, lg: 20 }}>
                                 <Image
-                                    src="images/2025/event-banner-square.jpg"
-                                    alt="Evolving patterns 2025 edition banner"
-                                    maxH="350px"
-                                    w={{ base: "60%", md: "80%" }}
+                                    src="images/2026/tedxlogo_web.png"
+                                    alt="Keeping the Human Alive 2026 edition banner"
+                                    maxH="380px"
+                                    w={{ base: "80%", md: "100%" }}
                                     objectFit="contain"
-                                    className="shake-effect"
                                 />
                             </Box>
                         </motion.div>
@@ -152,7 +151,7 @@ const Announcer = () => {
                                 </div>
                                 <div className="flex justify-between items-center border-b border-white/10 pb-4">
                                     <span className="text-sm opacity-60">TIME</span>
-                                    <span className="text-lg">TBD</span>
+                                    <span className="text-lg"></span>
                                 </div>
                                 <div className="flex justify-between items-center border-b border-white/10 pb-4">
                                     <span className="text-sm opacity-60">VENUE</span>

@@ -1,6 +1,6 @@
 import React from "react";
-import { Container, Heading, Text, Box, VStack, Link, HStack, Image, Flex } from "@chakra-ui/react";
-import { Link as RouteLink } from "react-router-dom";
+import { Container, Text, Box, VStack, Image, Flex, Link } from "@chakra-ui/react";
+import { HashLink } from "react-router-hash-link";
 
 const About: React.FC = () => {
     return (
@@ -24,7 +24,9 @@ const About: React.FC = () => {
                         </Text>
                     </Flex>
                     <Box mt={3} mb={7}>
-                            <Link href="/team#top"
+                            <HashLink
+                                smooth
+                                to="/team#top"
                                 className="group inline-block border border-white hover:bg-white hover:text-black transition-all duration-300"
                             >
                                 <div className="flex items-center p-2 px-6">
@@ -33,7 +35,7 @@ const About: React.FC = () => {
                                     →
                                 </span>
                                 </div>
-                            </Link>
+                            </HashLink>
                             </Box>
                 </VStack>
 
@@ -52,7 +54,7 @@ const About: React.FC = () => {
                 </VStack>
 
                 <VStack align="stretch" gap={6}>
-                    <Text as={"h2"} id="theteam" fontSize={"3xl"} fontWeight={"medium"}>
+                    <Text as={"h2"} id="theteam" fontSize={"4xl"} fontWeight={"medium"}>
                         About <span style={{ color: "var(--tedx-red)" }}>TED</span>
                     </Text>
 

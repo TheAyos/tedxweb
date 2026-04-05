@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import Footer from "@/components/Footer";
 import NavBar from "@/components/NavBar";
-import { Box, Text, Image, Link, Flex, VStack, Grid, Span, IconButton } from "@chakra-ui/react";
-import { BOARD_IMAGES, SPONSORS } from "@/Data";
+import { Box, Text, Image, Flex, VStack, Span, IconButton } from "@chakra-ui/react";
+import { BOARD_IMAGES } from "@/Data";
 import { HashLink as RouteLink } from "react-router-hash-link";
             
 

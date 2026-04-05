@@ -1,7 +1,4 @@
-import { SPONSORS } from "@/Data";
-import { Card, Flex, HStack, Container, VStack, Link, Image, Text, Box, Span } from "@chakra-ui/react";
-import { FaExternalLinkAlt } from "react-icons/fa";
-import { Link as RouteLink } from "react-router-dom";
+import { Card, HStack, Container, VStack, Text, Box } from "@chakra-ui/react";
 import { HashLink } from "react-router-hash-link";
 
 const PartnersMain = () => {

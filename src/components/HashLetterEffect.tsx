@@ -4,7 +4,7 @@ const HashLetterEffect = ({ words = ["Hashhhh", "Effect !"], rtl = false }: { wo
     // const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz!@#$%^&*():{};|,.<>/?";
     const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz!@#$%^&*():{};|,.<>/?";
     const [currentText, setCurrentText] = useState(words[0]);
-    const [wordIndex, _] = useState(0);
+    const [wordIndex] = useState(0);
     const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
     const shuffleTime = 50;
