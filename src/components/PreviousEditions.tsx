@@ -1,22 +1,43 @@
 import { EDITIONS } from "@/Data";
-import { Box, Text, Span } from "@chakra-ui/react";
+import { Box, VStack, Text, Span } from "@chakra-ui/react";
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 import { useRef } from "react";
 import { FiArrowRight } from "react-icons/fi";
 
 const PreviousEditions = () => {
     return (
-        <>
-            <Text as={"h2"} id="events" fontSize={"4xl"} fontWeight={"medium"} textAlign={"center"} mt={10} mb={6}>
-                Previous Editions <Span color="var(--tedx-red)">2022-2024</Span>
-            </Text>
+        <Box as="section" width="full" py={12}>
+            <Box id="PreviousEditions" />
+            <VStack
+                maxW="container.xl"
+                mx="auto"
+                px={{ base: 8, md: "10vw" }}
+                align="stretch"
+            >
+                <Text
+                    as="h2"
+                    id="events"
+                    fontSize="4xl"
+                    fontWeight="medium"
+                    mt={10}
+                    mb={12}
+                    textAlign="left"
+                    width="full"
+                >
+                    Previous Editions <Span color="var(--tedx-red)">2023-2025</Span>
+                </Text>
 
-            <Box as="section" width="full" py={12} px={8}>
                 {EDITIONS.map((ed, i) => (
-                    <CrazyLink key={i} heading={ed.title} subheading={ed.theme} imgSrc={ed.image} href={ed.link} />
+                    <CrazyLink
+                        key={i}
+                        heading={ed.title}
+                        subheading={ed.theme}
+                        imgSrc={ed.image}
+                        href={ed.link}
+                    />
                 ))}
-            </Box>
-        </>
+            </VStack>
+        </Box>
     );
 };
 
@@ -78,18 +99,23 @@ const CrazyLink = ({ heading, imgSrc, subheading, href }: LinkProps) => {
                     }}
                     className="relative z-10 block text-4xl font-bold text-neutral-500 transition-colors duration-500 group-hover:text-neutral-50 md:text-6xl"
                 >
-                    {heading.split("").map((l, i) => (
-                        <motion.span
-                            variants={{
-                                initial: { x: 0 },
-                                whileHover: { x: 16 },
-                            }}
-                            transition={{ type: "spring" }}
-                            className="inline-block"
-                            key={i}
-                        >
-                            {l === " " ? "\u00A0" : l}
-                        </motion.span>
+                    {heading.split(" ").map((word, wi) => (
+                        <span key={wi} className="inline-block whitespace-nowrap">
+                            {word.split("").map((l, i) => (
+                                <motion.span
+                                    variants={{
+                                        initial: { x: 0 },
+                                        whileHover: { x: 16 },
+                                    }}
+                                    transition={{ type: "spring" }}
+                                    className="inline-block"
+                                    key={i}
+                                >
+                                    {l}
+                                </motion.span>
+                            ))}
+                            {wi < heading.split(" ").length - 1 && <span>{"\u00A0"}</span>}
+                        </span>
                     ))}
                 </motion.span>
                 <span className="relative mt-2 block text-base text-neutral-500 transition-colors duration-500 group-hover:text-neutral-50">{subheading}</span>
