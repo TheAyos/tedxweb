@@ -12,9 +12,11 @@ const About: React.FC = () => {
                 <VStack gap={20} align="stretch">
 
                 <VStack align="stretch" gap={10}>
+                    <Box w={{ base: "100%", md: "90%", lg: "80%" }} mx="auto">
                     <Text as={"h2"} id="theteam" fontSize={"4xl"} fontWeight={"medium"}>
                         Who are we?
                     </Text>
+                    </Box>
                     <Flex flexDir="column" align="center">
                         <Image src="/images/2026/everyone.jpg" width={{ base: "100%", sm: "100%" }}  height={"auto"} maxW={{sm: "800px"}}/>
 
@@ -42,9 +44,11 @@ const About: React.FC = () => {
                 </VStack>
 
                 <VStack align="stretch" gap={6}>
+                    <Box w={{ base: "100%", md: "90%", lg: "80%" }} mx="auto">
                     <Text as={"h2"} id="theteam" fontSize={"4xl"} fontWeight={"medium"}>
                         What is <span style={{ color: "var(--tedx-red)" }}>TED</span>x?
                     </Text>
+                    </Box>
     
             
                     <Box w={{ base: "100%", md: "90%", lg: "80%" }} mx="auto">
@@ -56,9 +60,11 @@ const About: React.FC = () => {
                 </VStack>
 
                 <VStack align="stretch" gap={6}>
+                    <Box w={{ base: "100%", md: "90%", lg: "80%" }} mx="auto">
                     <Text as={"h2"} id="theteam" fontSize={"4xl"} fontWeight={"medium"}>
                         About <span style={{ color: "var(--tedx-red)" }}>TED</span>
                     </Text>
+                    </Box>
 
                     <Box w={{ base: "100%", md: "90%", lg: "80%" }} mx="auto">
                         <Text as={"p"} fontSize={"md"} fontWeight={"medium"} mt={{ base: 10, md: 0 }} px={{ base: 0, md: 0 }}>
