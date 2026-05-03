@@ -5,7 +5,7 @@ import { Heading, Link, Span, Image, Box, Text, HStack } from "@chakra-ui/react"
 import { FaInstagram, FaLinkedin } from "react-icons/fa";
 // import "../AppOld.css";
 // disables registration button when set to '#'
-const REGISTER_NOW_LINK = "#";
+const REGISTER_NOW_LINK: string = "https://forms.gle/uCrbqWdVKMb6E8ih6";
 
 const Announcer = () => {
     return (
@@ -135,7 +135,7 @@ const Announcer = () => {
                     {/* Event details */}
                     <motion.div initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.3 }} className="md:space-y-12">
                         <div className="space-y-6">
-                            <Box color="var(--tedx-red)" border="1px solid" borderColor="var(--tedx-red)" px={6} py={4}>
+                            <Box color="var(--tedx-red)" border="1px solid" borderColor="var(--tedx-red)" px={6} py={4} mt={{base: 7, md:0}}>
                                 <Text fontFamily="mono" fontSize="lg">
                                     SAVE THE DATE
                                 </Text>
@@ -151,18 +151,28 @@ const Announcer = () => {
                                 </div>
                                 <div className="flex justify-between items-center border-b border-white/10 pb-4">
                                     <span className="text-sm opacity-60">TIME</span>
-                                    <span className="text-lg"></span>
+                                    <span className="text-lg">18:15</span>
                                 </div>
                                 <div className="flex justify-between items-center border-b border-white/10 pb-4">
                                     <span className="text-sm opacity-60">VENUE</span>
-                                    <span className="text-lg">Amphi Poincaré (.K)</span>
+                                    <a
+                                        href="https://maps.app.goo.gl/EpxvpxbiTci6u1S17?g_st=ac"
+                                        target="_blank"
+                                        rel="noreferrer noopener"
+                                        className="text-lg hover:underline"
+                                    >
+                                        Amphi Poincaré (.K)
+                                    </a>
                                 </div>
                             </div>
                         </div>
 
                         {/* CTA Buttons */}
-                        <div className="space-y-4">
-                            <RouteLink
+                        <Box className="space-y-4" mt={{base: 5}}>
+                            
+                            {/*to use when the registration still hasn't started*/}
+
+                            {/* <RouteLink
                                 to={REGISTER_NOW_LINK}
                                 className="group block bg-red-600 hover:bg-white hover:text-black transition-all duration-300"
                                 onClick={(e) => REGISTER_NOW_LINK == "#" && e.preventDefault()}
@@ -180,7 +190,27 @@ const Announcer = () => {
                                     <span className="font-mono text-lg font-bold">REGISTER NOW{REGISTER_NOW_LINK == "#" ? " (COMING SOON)" : ""}</span>
                                     <span className="font-mono text-lg transform group-hover:translate-x-2 transition-transform duration-300">→</span>
                                 </div>
-                            </RouteLink>
+                            </RouteLink> */}
+
+                            <button
+                                type="button"
+                                className="group block w-full bg-[var(--tedx-red)] hover:bg-white hover:text-black transition-all duration-300 disabled:opacity-100 disabled:cursor-not-allowed"
+                                onClick={() => {
+                                    if (REGISTER_NOW_LINK !== "#") {
+                                        window.open(REGISTER_NOW_LINK, "_blank", "noopener,noreferrer");
+                                    }
+                                }}
+                                disabled={REGISTER_NOW_LINK === "#"}
+                                >
+                                <div className="flex items-center justify-between p-4">
+                                    <span className="font-mono text-lg font-bold">
+                                    REGISTER NOW
+                                    </span>
+                                    <span className="font-mono text-lg transform group-hover:translate-x-2 transition-transform duration-300">
+                                    →
+                                    </span>
+                                </div>
+                            </button>
 
                             <a href="#events" className="group block border border-white hover:bg-white hover:text-black transition-all duration-300">
                                 <div className="flex items-center justify-between p-4">
@@ -188,7 +218,7 @@ const Announcer = () => {
                                     <span className="font-mono text-lg transform group-hover:translate-y-1 transition-transform duration-300">↓</span>
                                 </div>
                             </a>
-                        </div>
+                        </Box>
                     </motion.div>
 
                     {/* Social links */}

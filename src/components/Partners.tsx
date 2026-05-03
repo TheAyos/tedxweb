@@ -1,17 +1,20 @@
-import { Card, HStack, Container, VStack, Text, Box } from "@chakra-ui/react";
+import { HStack, Container, VStack, Text, Box, Span, Grid, Link as ChakraLink } from "@chakra-ui/react";
 import { HashLink } from "react-router-hash-link";
+import { SPONSORS } from "@/Data";
 
-const PartnersMain = () => {
+const Partners = () => {
     return (
         <>
-            <Container maxW="container.xl" mt={24} mx="auto" px={{ base: 8, md: "10vw" }}>
+            <Container maxW="container.xl" mt={20} mx="auto" px={{ base: 8, md: "10vw" }}>
             <HStack width={"full"} align="start">
-                <Text as={"h2"} id="partnersmain" color="var(--tedx-red)" fontSize={"4xl"} fontWeight={"medium"} textAlign={"left"}>
+                <Text as={"h2"} id="partners" color="var(--tedx-red)" fontSize={"4xl"} fontWeight={"medium"} textAlign={"left"}>
                     Our Partners
                 </Text>
             </HStack>
 
-            <Card.Root
+            {/*to use when there is still no information about partners*/}
+
+            {/* <Card.Root
                     width="100%"
                     overflow="hidden"
                     mx="auto"
@@ -60,7 +63,52 @@ const PartnersMain = () => {
                         </Card.Description>
                     </Card.Body>
                 </Box>
-            </Card.Root>
+            </Card.Root> */}
+        
+        {SPONSORS.map((edition, i) => (
+                <>
+                <Box width="full" key={i} pt={10}>
+                    <Text as="h2" fontSize="4xl" fontWeight="medium" mb={8} color="white">
+                        <Span color="var(--tedx-red)">{edition.year}</Span>
+                    </Text>
+                    <Grid templateColumns={{ base: "1fr", md: "repeat(3, 1fr)", lg: "repeat(4, 1fr)" }} gap={8}>
+                        {edition.sponsors.map((sponsor, i) => (
+                            sponsor && (
+                            <ChakraLink
+                                key={i}
+                                href={sponsor.url}
+                                rel="noopener noreferrer"
+                                target="_blank"
+                                _hover={{ textDecoration: 'none' }}
+                            >
+                            <Box
+                                key={i}
+                                bg="white"
+                                p={4}
+                                borderRadius="md"
+                                display="flex"
+                                alignItems="center"
+                                justifyContent="center"
+                                transition="transform 0.2s"
+                                _hover={{ transform: 'scale(1.05)' }}
+                            >
+                                <img
+                                    src={sponsor.image}
+                                    alt={`Partner ${sponsor.image}`}
+                                    style={{
+                                        maxWidth: '100%',
+                                        height: 'auto',
+                                        objectFit: 'contain'
+                                    }}
+                                />
+                            </Box>
+                            </ChakraLink>
+                            )
+                        ))}
+                    </Grid>
+                </Box>
+                </>
+            ))}
                     
         <VStack
             mt={10}
@@ -69,7 +117,7 @@ const PartnersMain = () => {
         <Box mt={8} mb={16}>
         <HashLink
             smooth
-            to="/partners#top"
+            to="/previous-partners#top"
             className="group inline-block border border-white hover:bg-white hover:text-black transition-all duration-300"
             >
             <div className="flex items-center p-2 px-6">
@@ -87,4 +135,4 @@ const PartnersMain = () => {
 );
 };
 
-export default PartnersMain;
+export default Partners;

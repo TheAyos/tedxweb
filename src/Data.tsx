@@ -3,7 +3,7 @@ export const NAV_LINKS = [
     { label: "Events", href: "/#PreviousEditions" },
     { label: "Gallery", href: "/#hzscroll" },
     // TODO: { label: "Schedule", href: "#schedule" },
-    { label: "Partners", href: "/partners#top" },
+    { label: "Partners", href: "/previous-partners#top" },
     { label: "The Team", href: "/team#top" },
 ];
 
@@ -30,12 +30,19 @@ export const EDITIONS = [
 
 export const SPONSORS = [
     {
-        year: "(Upcoming...)  2026",
-        sponsors: [
-            {image: "/images/2025/sponsors/ipp.png",
-                url: "https://www.ip-paris.fr/"},
-            {image: "/images/2025/sponsors/_upcoming.png",
-                url: ""}
+        year: "2026",
+        sponsors: [,
+            {image: "/images/2026/sponsors/GroupHungary.png",
+                url: "https://www.groupama.com/en/fiche/groupama-biztosito/"}
+        ]
+    }]
+
+export const SPONSORS_OLD = [
+    {
+        year: "2026",
+        sponsors: [,
+            {image: "/images/2026/sponsors/GroupHungary.png",
+                url: "https://www.groupama.com/en/fiche/groupama-biztosito/"}
         ]
     },
     {
@@ -72,6 +79,45 @@ export const SPONSORS = [
         ]
     }
 ];
+
+export const SPEAKERS = [
+    {
+        year: "2026",
+        speakers: [
+            {
+                image: "/images/2026/douglas.jpeg",
+                name: "Douglas Moreau",
+                title: "The founder of Club 2039, a private network for senior leaders, a keynote speaker on AI, and a TEDx organizer",
+                speech_title: "The Last Human Decision",
+                speech_description: "At the crossroads of the entrepreneurial world and public influence, Douglas has spent years exploring one central question: what kind of future are we actually building — and who gets to decide? \n\nHis talk, The Last Human Decision, confronts audiences with the most uncomfortable truth about AI: we are already on the plane. The only question left is where it lands.",
+                speech_link: "",
+            },
+            {
+                image: "/images/2026/reza.jpg",
+                name: "Reza Deghati",
+                title: "Photojournalist, Visual Artist, Architect",
+                speech_title: "Engineering the wounded souls",
+                speech_description: "After every war, cranes arrive, bridges are rebuilt, schools are filled with desks, and hospitals reopen. But a second destruction exists that no crane can reach: the destruction of identity, dignity, and the belief that one's story matters. Drawing on forty-five years of experience as a photojournalist and humanitarian, Reza Deghati reveals how images can restore voice and agency to those he calls “wounded souls”. Through education and storytelling, he shows how a camera can become a tool for reconstruction. Not of buildings, but of lives.",
+                speech_link: "",
+            },
+            {
+                image: "/images/2026/florence.jpg",
+                name: "Dr. Florence Allouche Aknin",
+                title: "CEO of DeltaWave, Professor of Pharmaceutical Innovation and Entrepreneurship",
+                speech_title: "Keeping the Human in Life",
+                speech_description: "For two centuries, medicine stayed on a single promise: a molecule, taken every day, for a lifetime. We learned to manage and to slow diseases, but we never quite touched the source. An entire civilization of care was built around chronicity. It kept people alive, but kept them patients.\n\nToday, that paradigm is broken. We are learning to read the source code of the body, to rewrite faulty instructions and to rebuild what disease destroys. Alongside these breakthroughs, AI is becoming the eye that detects disease years before the first symptom and an explorer of molecular spaces that no human team could ever navigate. We are moving from a medicine that treats to a medicine that cures.\n\nAs engineers step into biology, one principle must guide every line of code written. People don't just want to be alive. They want to see the moon, hear their children, and feel the snow. That is what it means to keep the human in life.",
+                speech_link: "",
+            },
+            {
+                image: "/images/2026/goffi.png",
+                name: "Emmanuel Goffi",
+                title: "Professor of Ethics at ISEP, consultant in ethics",
+                speech_title: "How to Take Back the Reins of Your Will: The Courage to Not Know",
+                speech_description: "We live in a hyper-connected world where, hour after hour, we are bombarded with data that we mistakenly treat as information. The digital world has now amplified this phenomenon, capturing our attention for purposes that are sometimes unscrupulous. Caught up in this glut of data, we lose our footing; we get lost in the multitude of choices presented to us and in sometimes contradictory signals. The mental load grows heavier, choices become complicated, our dependence increases, and our vigilance wanes. What can we do to take back the reins? To extricate ourselves from this turmoil and regain control of our thoughts, our choices, our lives, and our humanity?",
+                speech_link: "",
+            },
+        ]
+    }]
 
 export const SPEAKERS_OLD = [
     {
@@ -182,7 +228,25 @@ export const CONTACTS= [
         ]
     }]
 
-//TODO: select more images
+export const SCHEDULE = [
+  { time: "15:00", title: "The speakers and the team at the place" },
+  { time: "15:15", title: "Setup" },
+  { time: "16:00", title: "Start of the rehearsal" },
+  { time: "16:45", title: "Rehearsal" },
+  { time: "18:00", title: "Opening doors" },
+  { time: "18:15", title: "Amphi is available for everyone" },
+  { time: "18:30", title: "Opening speech"},
+  { time: "18:50", title: "First speech", note: "Douglas Moreau" },
+  { time: "19:10", title: "Second speech", note: "Emmanuel Goffi" },
+  { time: "19:30", title: "Break" },
+  { time: "19:45", title: "Sponsor speech", note: "Groupama Hungary" },
+  { time: "19:55", title: "Third speech", note: "Dr. Florence Allouche Aknin" },
+  { time: "20:15", title: "Forth speech", note: "Reza Deghati" },
+  { time: "20:35", title: "Q&A" },
+  { time: "20:55", title: "Going to salon d'honneur"}
+];
+
+
 export const IMAGES = [
     "/images/2024/faq-fun.jpg",
     "/images/2024/full-with-speakers.jpg",

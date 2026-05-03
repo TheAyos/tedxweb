@@ -2,10 +2,10 @@ import React from "react";
 import Footer from "@/components/Footer";
 import NavBar from "@/components/NavBar";
 import { Box, Text, Link as ChakraLink, VStack, Grid, Span } from "@chakra-ui/react";
-import { SPONSORS } from "@/Data";
+import { SPONSORS_OLD } from "@/Data";
 import { HashLink as RouteLink } from "react-router-hash-link";
 
-const Partners: React.FC = () => {
+const PreviousPartners: React.FC = () => {
     return (
         <>
             <NavBar />
@@ -13,7 +13,7 @@ const Partners: React.FC = () => {
 
             <Box as="section" bg="black" py={16}>
                 <VStack maxW="container.xl" gap={9} mx="auto" px={{ base: 8, md: "10vw" }}>
-                    <Text as="h1" fontSize="5xl" fontWeight="bold" color="var(--tedx-red)" textAlign="center">
+                    <Text as="h1" fontSize={{ base: "4xl", md: "5xl" }} fontWeight="bold" color="var(--tedx-red)" textAlign="center">
                         Our Partners
                     </Text>
                     <Text color="white" fontSize="lg" textAlign="justify" maxW="800px">
@@ -24,14 +24,15 @@ const Partners: React.FC = () => {
 
             <Box as="section" bg="black" pb={16} pt={8}>
                 <VStack maxW="85%" mx="auto" gap={20} px={{ base: 8, md: "10vw" }}>
-                    {SPONSORS.map((edition, i) => (
+
+                    {SPONSORS_OLD.map((edition, i) => (
                         <>
                         <Box width="full" key={i}>
-                            <Text as="h2" fontSize="4xl" fontWeight="bold" mb={8} color="white">
+                            <Text as="h2" fontSize="4xl" fontWeight="medium" mb={8} color="white">
                                 <Span color="var(--tedx-red)">{edition.year}</Span> Edition Partners
                             </Text>
                             <Grid templateColumns={{ base: "1fr", md: "repeat(3, 1fr)", lg: "repeat(4, 1fr)" }} gap={8}>
-                                {edition.sponsors.map((Path, i) => (
+                                {edition.sponsors.filter(s => s != null).map((Path, i) => (
                                     <ChakraLink
                                         key={i}
                                         href={Path.url}
@@ -68,7 +69,7 @@ const Partners: React.FC = () => {
                     ))}
                         
                 <RouteLink
-                        to="/#partnersmain"
+                        to="/#partners"
                         className="group inline-block border border-white hover:bg-white hover:text-black transition-all duration-300"
                     >
                          <Box maxW="400px"
@@ -91,4 +92,4 @@ const Partners: React.FC = () => {
     );
 };
 
-export default Partners;
+export default PreviousPartners;
