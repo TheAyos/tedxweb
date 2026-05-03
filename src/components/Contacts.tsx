@@ -14,7 +14,7 @@ const Contacts = () => {
             {CONTACTS.map((edition, i) => (
                 
                     
-                <Flex key={i} justify="space-around" flexWrap="wrap" py={10} gap={2} boxSizing={"border-box"}>
+                <Flex key={i} justify="space-around" flexWrap="wrap" py={10} gap={{base: 9, md: 2}} boxSizing={"border-box"}>
                     {edition.board_members.map((s, i) => (
                         <Card.Root
                             key={i}

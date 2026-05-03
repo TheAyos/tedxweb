@@ -1,13 +1,13 @@
 import React from "react";
 import Announcer from "./Announcer";
-import TheTeam from "@/components/TheTeam";
+import TeamMain from "@/components/TeamMain";
 import Footer from "@/components/Footer";
 import NavBar from "@/components/NavBar";
 import { Flex } from "@chakra-ui/react";
 import HzScroll from "@/components/HzScroll";
 import PreviousEditions from "@/components/PreviousEditions";
 import Speakers from "@/components/Speakers";
-import PartnersMain from "@/components/PartnersMain";
+import Partners from "@/components/Partners";
 import Contacts from "@/components/Contacts";
 
 import { Intro } from "@/components/Intro";
@@ -35,10 +35,10 @@ const Home: React.FC = () => {
             <Flex as="main" alignItems={"center"} flexDirection={"column"} textAlign={"justify"} color="white" maxW="container.xl" py={12} px={{ base: 8, md: "10vw" }}>
                 <Intro />
                 <Speakers />
-                <PartnersMain />
+                <Partners />
                 <PreviousEditions />
                 <HzScroll />
-                <TheTeam />
+                <TeamMain />
                 <Contacts />
             </Flex>
 

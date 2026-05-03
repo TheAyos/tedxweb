@@ -2,7 +2,7 @@ import React from "react";
 import { Container, Text, Box, VStack, Image, Flex, Link } from "@chakra-ui/react";
 import { HashLink } from "react-router-hash-link";
 
-const About: React.FC = () => {
+const TeamMain: React.FC = () => {
     return (
 
         <>
@@ -12,13 +12,13 @@ const About: React.FC = () => {
                 <VStack gap={20} align="stretch">
 
                 <VStack align="stretch" gap={10}>
-                    <Text as={"h2"} id="theteam" fontSize={"4xl"} fontWeight={"medium"}>
+                    <Text as={"h2"} id="teammain" fontSize={"4xl"} fontWeight={"medium"}>
                         Who are we?
                     </Text>
                     <Flex flexDir={{ base: "column", md: "column" }} align="left">
                         <Image src="/images/2026/everyone.jpg" width={{ base: "100%", sm: "100%" }}  height={"auto"} maxW={{sm: "800px"}}/>
 
-                        <Text as={"p"} fontSize={"md"} fontWeight={"medium"} mt={{ base: 10, md: 10 }} px={{ base: 0, md: 0 }} w={{ base: "100%", md: "90%", lg: "80%" }}>
+                        <Text as={"p"} fontSize={"md"} fontWeight={"medium"} mt={{ base: 10, md: 10 }} px={{ base: 0, md: 0 }} w={{ base: "100%", md: "90%", lg: "80%" }} textAlign={{ base: "left", md: "justify" }}>
                             We are an organization consisting of 19 students of the Bachelor of Science program at École Polytechnique. 
                             Putting together our experience of living all around the world — from the US, through France, Slovakia, the Ivory Coast, India, to Russia and Albania — we aim to create an event that addresses global issues from our local perspective of being students at the IP Paris campus.
                         </Text>
@@ -46,7 +46,7 @@ const About: React.FC = () => {
     
             
                     <Box w={{ base: "100%", md: "90%", lg: "80%" }}>
-                        <Text as={"p"} fontSize={"md"} fontWeight={"medium"} mt={{ base: 10, md: 0 }} px={{ base: 0, md: 0 }}>
+                        <Text as={"p"} fontSize={"md"} fontWeight={"medium"} mt={{ base: 10, md: 0 }} px={{ base: 0, md: 0 }} textAlign={{ base: "left", md: "justify" }}>
                             In the spirit of discovering and spreading ideas, TED has created a program called TEDx. TEDx is a program of local, self-organized events that bring people together to share a TED-like experience. Our event is called TEDxÉcolePolytechnique, where x = independently organized TED event. <br /><br />
                             At our TEDxÉcolePolytechnique event, TED Talks video and live speakers will combine to spark deep discussion and connection in a small group. The TED Conference provides general guidance for the TEDx program, but individual TEDx events, including ours, are self-organized.
                         </Text>
@@ -59,7 +59,7 @@ const About: React.FC = () => {
                     </Text>
 
                     <Box w={{ base: "100%", md: "90%", lg: "80%" }}>
-                        <Text as={"p"} fontSize={"md"} fontWeight={"medium"} mt={{ base: 10, md: 0 }} px={{ base: 0, md: 0 }}>
+                        <Text as={"p"} fontSize={"md"} fontWeight={"medium"} mt={{ base: 10, md: 0 }} px={{ base: 0, md: 0 }} textAlign={{ base: "left", md: "justify" }}>
                             TED is a nonprofit, nonpartisan organization dedicated to discovering, debating and spreading ideas that spark conversation, deepen understanding and
                             drive meaningful change. Our organization is devoted to curiosity, reason, wonder and the pursuit of knowledge — without an agenda. We welcome people
                             from every discipline and culture who seek a deeper understanding of the world and connection with others, and we invite everyone to engage with ideas
@@ -68,7 +68,7 @@ const About: React.FC = () => {
                     </Box>
 
                     <Box w={{ base: "100%", md: "90%", lg: "80%" }}>
-                        <Text as={"p"} fontSize={"md"} fontWeight={"medium"} mt={{ base: 5, md: 0 }} px={{ base: 0, md: 0 }}>
+                        <Text as={"p"} fontSize={"md"} fontWeight={"medium"} mt={{ base: 5, md: 0 }} px={{ base: 0, md: 0 }} textAlign={{ base: "left", md: "justify" }}>
                             TED began in 1984 as a conference where Technology, Entertainment and Design converged, but today it spans a multitude of worldwide communities and
                             initiatives exploring everything from science and business to education, arts and global issues. <br /><br />
                             In addition to the TED Talks curated from our annual
@@ -89,4 +89,4 @@ const About: React.FC = () => {
     );
 };
 
-export default About;
+export default TeamMain;

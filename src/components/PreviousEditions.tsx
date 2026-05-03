@@ -99,7 +99,7 @@ const CrazyLink = ({ heading, imgSrc, subheading, href }: LinkProps) => {
                     }}
                     className="relative z-10 block text-4xl font-bold text-neutral-500 transition-colors duration-500 group-hover:text-neutral-50 md:text-6xl"
                 >
-                    {heading.split("").map((l, i) => (
+                    {heading.split(" ").map((word, i) => (
                         <motion.span
                             variants={{
                                 initial: { x: 0 },
@@ -109,7 +109,7 @@ const CrazyLink = ({ heading, imgSrc, subheading, href }: LinkProps) => {
                             className="inline-block"
                             key={i}
                         >
-                            {l === " " ? "\u00A0" : l}
+                            {word}{i < heading.split(" ").length - 1 && "\u00A0"}
                         </motion.span>
                     ))}
                 </motion.span>

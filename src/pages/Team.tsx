@@ -28,7 +28,7 @@ const Team: React.FC = () => {
 
             <Box as="section" bg="black" py={16}>
                 <VStack maxW="container.xl" gap={9} px={{ base: 8, md: "10vw" }} align="center">
-                    <Text as="h1" fontSize="5xl" fontWeight="bold" color="var(--tedx-red)">
+                    <Text as="h1" fontSize={{ base: "4xl", md: "5xl" }} fontWeight="bold" color="var(--tedx-red)">
                         Our Team
                     </Text>
 
@@ -144,7 +144,7 @@ const Team: React.FC = () => {
                 <VStack maxW="container.xl" mx="auto" gap={12} px={{ base: 8, md: "10vw" }}>
                         
                         <RouteLink
-                        to="/#theteam"
+                        to="/#teammain"
                         className="group inline-block border border-white hover:bg-white hover:text-black transition-all duration-300"
                     >
                          <Box maxW="400px"

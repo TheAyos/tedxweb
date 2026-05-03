@@ -14,7 +14,7 @@ const PreviousSpeakers: React.FC = () => {
 
             <Box as="section" bg="black" pt={16}>
                 <VStack maxW="container.xl" gap={9} mx="auto" px={{ base: 8, md: "10vw" }}>
-                    <Text as="h1" fontSize="5xl" fontWeight="bold" color="var(--tedx-red)" textAlign="center">
+                    <Text as="h1" fontSize={{ base: "4xl", md: "5xl" }} fontWeight="bold" color="var(--tedx-red)" textAlign="center">
                         Speakers from previous editions
                     </Text>
                     <Text color="white" fontSize="lg" textAlign="justify" maxW="800px">
