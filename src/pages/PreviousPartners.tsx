@@ -28,7 +28,7 @@ const PreviousPartners: React.FC = () => {
                     {SPONSORS_OLD.map((edition, i) => (
                         <>
                         <Box width="full" key={i}>
-                            <Text as="h2" fontSize="4xl" fontWeight="bold" mb={8} color="white">
+                            <Text as="h2" fontSize="4xl" fontWeight="medium" mb={8} color="white">
                                 <Span color="var(--tedx-red)">{edition.year}</Span> Edition Partners
                             </Text>
                             <Grid templateColumns={{ base: "1fr", md: "repeat(3, 1fr)", lg: "repeat(4, 1fr)" }} gap={8}>

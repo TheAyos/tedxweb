@@ -3,7 +3,7 @@ export const NAV_LINKS = [
     { label: "Events", href: "/#PreviousEditions" },
     { label: "Gallery", href: "/#hzscroll" },
     // TODO: { label: "Schedule", href: "#schedule" },
-    { label: "Partners", href: "/partners#top" },
+    { label: "Partners", href: "/previous-partners#top" },
     { label: "The Team", href: "/team#top" },
 ];
 

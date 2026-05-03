@@ -155,7 +155,14 @@ const Announcer = () => {
                                 </div>
                                 <div className="flex justify-between items-center border-b border-white/10 pb-4">
                                     <span className="text-sm opacity-60">VENUE</span>
-                                    <span className="text-lg">Amphi Poincaré (.K)</span>
+                                    <a
+                                        href="https://maps.app.goo.gl/EpxvpxbiTci6u1S17?g_st=ac"
+                                        target="_blank"
+                                        rel="noreferrer noopener"
+                                        className="text-lg hover:underline"
+                                    >
+                                        Amphi Poincaré (.K)
+                                    </a>
                                 </div>
                             </div>
                         </div>

@@ -33,7 +33,7 @@ const PreviousSpeakers: React.FC = () => {
             {SPEAKERS_OLD.map((edition, i) => (
                 <Flex key={i} justify="space-around" flexWrap="wrap" py={10} gap={20} boxSizing={"border-box"}>
                     <Box width="full">
-                        <Text as="h2" fontSize="4xl" fontWeight="bold" color="white">
+                        <Text as="h2" fontSize="4xl" fontWeight="medium" color="white">
                             <Span color="var(--tedx-red)">{edition.year}</Span>
                         </Text>
                     </Box>
