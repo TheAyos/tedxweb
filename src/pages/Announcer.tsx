@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import { Link as RouteLink } from "react-router-dom";
 // import HashLetterEffect from "../components/HashLetterEffect";
 import { Heading, Link, Span, Image, Box, Text, HStack } from "@chakra-ui/react";
 import { FaInstagram, FaLinkedin } from "react-icons/fa";
@@ -135,7 +134,7 @@ const Announcer = () => {
                     {/* Event details */}
                     <motion.div initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.3 }} className="md:space-y-12">
                         <div className="space-y-6">
-                            <Box color="var(--tedx-red)" border="1px solid" borderColor="var(--tedx-red)" px={6} py={4} mt={{base: 7, md:0}}>
+                            <Box color="var(--tedx-red)" border="1px solid" borderColor="var(--tedx-red)" px={6} py={4} mt={{ base: 7, md: 0 }}>
                                 <Text fontFamily="mono" fontSize="lg">
                                     SAVE THE DATE
                                 </Text>
@@ -168,8 +167,8 @@ const Announcer = () => {
                         </div>
 
                         {/* CTA Buttons */}
-                        <Box className="space-y-4" mt={{base: 5}}>
-                            
+                        <Box className="space-y-4" mt={{ base: 5 }}>
+
                             {/*to use when the registration still hasn't started*/}
 
                             {/* <RouteLink
@@ -201,13 +200,13 @@ const Announcer = () => {
                                     }
                                 }}
                                 disabled={REGISTER_NOW_LINK === "#"}
-                                >
+                            >
                                 <div className="flex items-center justify-between p-4">
                                     <span className="font-mono text-lg font-bold">
-                                    REGISTER NOW
+                                        REGISTER NOW
                                     </span>
                                     <span className="font-mono text-lg transform group-hover:translate-x-2 transition-transform duration-300">
-                                    →
+                                        →
                                     </span>
                                 </div>
                             </button>
@@ -243,11 +242,11 @@ const Announcer = () => {
                                     target="_blank"
                                     display="flex"
                                 >
-                                    <Box 
-                                    transition="all 0.3s ease-in-out"
-                                    _hover={{ transform: "scale(1.2) rotate(8deg)", color: "var(--tedx-red)" }}
+                                    <Box
+                                        transition="all 0.3s ease-in-out"
+                                        _hover={{ transform: "scale(1.2) rotate(8deg)", color: "var(--tedx-red)" }}
                                     >
-                                    <FaInstagram size="28px" />
+                                        <FaInstagram size="28px" />
                                     </Box>
                                 </Link>
                                 <Link
@@ -255,11 +254,11 @@ const Announcer = () => {
                                     target="_blank"
                                     display="flex"
                                 >
-                                    <Box 
-                                    transition="all 0.3s ease-in-out"
-                                    _hover={{ transform: "scale(1.2) rotate(8deg)", color: "var(--tedx-red)" }}
+                                    <Box
+                                        transition="all 0.3s ease-in-out"
+                                        _hover={{ transform: "scale(1.2) rotate(8deg)", color: "var(--tedx-red)" }}
                                     >
-                                    <FaLinkedin size="28px" />
+                                        <FaLinkedin size="28px" />
                                     </Box>
 
                                 </Link>
