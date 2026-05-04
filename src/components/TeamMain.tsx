@@ -6,9 +6,7 @@ const TeamMain: React.FC = () => {
     return (
 
         <>
-            <Container as="main" mb={5} pt={12} bg="black" color="white" maxW="container.xl" textAlign={"justify"}
-                mx="auto"
-                px={{ base: 8, md: "10vw" }}>
+            <Container width="full" as="main" mb={5} pt={12} bg="black" color="white" maxW="container.xl" textAlign={"justify"} mx="auto" px={{ base: 8, md: "10vw" }}>
                 <VStack gap={20} align="stretch">
 
                 <VStack align="stretch" gap={10}>
