@@ -93,11 +93,11 @@ export const SPEAKERS = [
                 speech_link: "",
             },
             {
-                image: "/images/2026/reza.jpg",
-                name: "Reza Deghati",
-                title: "Photojournalist, Visual Artist, Architect",
-                speech_title: "Engineering the wounded souls",
-                speech_description: "After every war, cranes arrive, bridges are rebuilt, schools are filled with desks, and hospitals reopen. But a second destruction exists that no crane can reach: the destruction of identity, dignity, and the belief that one's story matters. Drawing on forty-five years of experience as a photojournalist and humanitarian, Reza Deghati reveals how images can restore voice and agency to those he calls “wounded souls”. Through education and storytelling, he shows how a camera can become a tool for reconstruction. Not of buildings, but of lives.",
+                image: "/images/2026/goffi.png",
+                name: "Emmanuel Goffi",
+                title: "Professor of Ethics at ISEP, consultant in ethics",
+                speech_title: "How to Take Back the Reins of Your Will: The Courage to Not Know",
+                speech_description: "We live in a hyper-connected world where, hour after hour, we are bombarded with data that we mistakenly treat as information. The digital world has now amplified this phenomenon, capturing our attention for purposes that are sometimes unscrupulous. Caught up in this glut of data, we lose our footing; we get lost in the multitude of choices presented to us and in sometimes contradictory signals. The mental load grows heavier, choices become complicated, our dependence increases, and our vigilance wanes. What can we do to take back the reins? To extricate ourselves from this turmoil and regain control of our thoughts, our choices, our lives, and our humanity?",
                 speech_link: "",
             },
             {
@@ -109,13 +109,14 @@ export const SPEAKERS = [
                 speech_link: "",
             },
             {
-                image: "/images/2026/goffi.png",
-                name: "Emmanuel Goffi",
-                title: "Professor of Ethics at ISEP, consultant in ethics",
-                speech_title: "How to Take Back the Reins of Your Will: The Courage to Not Know",
-                speech_description: "We live in a hyper-connected world where, hour after hour, we are bombarded with data that we mistakenly treat as information. The digital world has now amplified this phenomenon, capturing our attention for purposes that are sometimes unscrupulous. Caught up in this glut of data, we lose our footing; we get lost in the multitude of choices presented to us and in sometimes contradictory signals. The mental load grows heavier, choices become complicated, our dependence increases, and our vigilance wanes. What can we do to take back the reins? To extricate ourselves from this turmoil and regain control of our thoughts, our choices, our lives, and our humanity?",
+                image: "/images/2026/reza.jpg",
+                name: "Reza Deghati",
+                title: "Photojournalist, Visual Artist, Architect",
+                speech_title: "Engineering the wounded souls",
+                speech_description: "After every war, cranes arrive, bridges are rebuilt, schools are filled with desks, and hospitals reopen. But a second destruction exists that no crane can reach: the destruction of identity, dignity, and the belief that one's story matters. Drawing on forty-five years of experience as a photojournalist and humanitarian, Reza Deghati reveals how images can restore voice and agency to those he calls “wounded souls”. Through education and storytelling, he shows how a camera can become a tool for reconstruction. Not of buildings, but of lives.",
                 speech_link: "",
             },
+            
         ]
     }]
 
@@ -229,21 +230,17 @@ export const CONTACTS= [
     }]
 
 export const SCHEDULE = [
-  { time: "15:00", title: "The speakers and the team at the place" },
-  { time: "15:15", title: "Setup" },
-  { time: "16:00", title: "Start of the rehearsal" },
-  { time: "16:45", title: "Rehearsal" },
-  { time: "18:00", title: "Opening doors" },
-  { time: "18:15", title: "Amphi is available for everyone" },
-  { time: "18:30", title: "Opening speech"},
+  { time: "18:00", title: "Doors open" },
+  { time: "18:15", title: "Recommended arrival time" },
+  { time: "18:30", title: "Event begins"},
   { time: "18:50", title: "First speech", note: "Douglas Moreau" },
   { time: "19:10", title: "Second speech", note: "Emmanuel Goffi" },
   { time: "19:30", title: "Break" },
-  { time: "19:45", title: "Sponsor speech", note: "Groupama Hungary" },
+  { time: "19:45", title: "Sponsor's speech", note: "Groupama Hungary" },
   { time: "19:55", title: "Third speech", note: "Dr. Florence Allouche Aknin" },
   { time: "20:15", title: "Forth speech", note: "Reza Deghati" },
   { time: "20:35", title: "Q&A" },
-  { time: "20:55", title: "Going to salon d'honneur"}
+  { time: "20:55", title: "Informal buffet with pizza and soft drinks in Salon d'Honneur"}
 ];
 
 
